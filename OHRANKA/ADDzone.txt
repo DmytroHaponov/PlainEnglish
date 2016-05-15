@@ -1,0 +1,147 @@
+'This program works in conjunction with the xpDisplay module.
+'This program requires the following items to be created in the local controller.
+'  InfiinityString = "xpPassword", "CurrentDay"
+'  InfinityNumeric = "Occupied", "DayNum", "MondayOnTime", "MondayOffTime", "TuesdayOnTime", ..."SundayOnTime", "SundayOffTime"
+'  InfinityProgram = "xpCalculator", "xpStart"
+' Notes:
+'     On/Off Time numerics should have a formatting of "####".
+'     Occupied numeric should be configured as Binary in BACnet. All others should be configured as "Analog".
+
+'Object MyVar, SchedPoint
+'Numeric OK, UserEntry
+String d
+
+
+Pass: 'Routine to ask user for password
+  If TS > 0 then 'Scan has run the Else commands already
+    ACCLCDDispMode = 5 'Password entry mode
+    ACCLCDDispLine1 = "Vhod v systemu" ' "Enter Password:"
+    ACCLCDDispLine2 = "Vvedite parol:" '"To Access Points"
+'    ACCLCDDispLine3 = "" 'Password mode, do not "seed" line 3.
+    ACCLCDDispLine4 = "Nazhmite Enter" 'Function menu options
+    If (ACCLCDAnswerStr <> "") and (ACCLCDAnswerStr = "2002") then Goto SelOpt2 'xPPassword is InfinityString
+    ACCLCDAnswerStr = ""
+    If ACCLCDKeyStroke = 19 then Goto StopACC
+    If TS > 30 then Goto StopACC 'User interaction timeout
+  Else 'Run these commands before the above commands
+    ACCLCDKeyStroke = 0 'Clear keystroke - prevents menu cycling
+    ACCLCDAnswerStr = "" 'Clear answerstring - removes old entries
+  Endif
+
+SelOpt2: 
+    If TS > 0 then 'Scan has run the Else commands already
+     ACCLCDDispMode = 0 'Password entry mode
+     ACCLCDDispLine1 = "Opciya" ' "Enter Password:"
+     ACCLCDDispLine2 = "F1 - Postavit" '"To Access Points"
+     ACCLCDDispLine3 = "F2 - Snyat" 'Password mode, do not "seed" line 3.
+     ACCLCDDispLine4 = "F3 - Vyhod" 'Function menu options
+     If ACCLCDKeyStroke = 17 then
+ACCLCDDispLine2=""
+        ACCLCDDispLine3=""
+        Goto SelOpt
+    endif 
+    If ACCLCDKeyStroke = 18 then 
+       
+       Goto SelOpt3
+    endif 
+     If ACCLCDKeyStroke = 19 then Goto StopACC 
+    Endif
+
+SelOpt3: 
+      If TS > 0 then 'Scan has run the Else commands already
+    ACCLCDDispMode = 0 'Display mode
+    ACCLCDDispLine1 = "Podtverzhdenie"
+    ACCLCDDispLine2 = ""
+    ACCLCDDispLine3 = "Snyat s ohrany?"
+    ACCLCDDispLine4 = "Da          Net"             'Function menu options
+    If ACCLCDKeyStroke = 17 then
+      ACCLCDKeyStroke = 0
+      Goto BedOh
+    Endif
+    if  ACCLCDKeyStroke = 19 then goto StopACC
+endif
+
+BedOh:
+    num1=0
+    Ala1=0
+    num2=0
+    Ala2=0
+Goto StopACC
+ 
+
+SelOpt:
+  If TS > 0 then 'Scan has run the Else commands already
+
+    ACCLCDDispMode = 0 'Display mode
+    ACCLCDDispLine1 = "Vybor zony"
+    'ACCLCDDispLine2 = ""
+   if  ACCLCDKeyStroke = 14 then goto NZP     
+   if  ACCLCDKeyStroke = 13 then goto NZM    ' ACCLCDDispLine3 = ""
+     ACCLCDDispLine4 = "Dalee  Otmena"           'Function menu options
+    If  ACCLCDKeyStroke = 17 then 
+       ACCLCDKeyStroke = 0
+       Goto Podtver
+     endif 'xPPassword is InfinityString
+    ACCLCDAnswerStr = ""
+    If ACCLCDKeyStroke = 18 then
+      ACCLCDKeyStroke = 0
+     Goto StopACC
+    Endif
+
+    If TS > 120 then Goto StopACC 'User interaction timeout
+  Else 'Run these commands before the above commands
+    ACCLCDKeyStroke = 0 'Clear keystroke - prevents menu cycling
+    ACCLCDAnswerStr = "" 'Clear answerstring - removes old entries
+  Endif
+
+NZP: 
+  if ZonaSel<7 then ZonaSel = ZonaSel+1
+ Goto PrintD
+
+NZM: 
+ if ZonaSel>1 then ZonaSel = ZonaSel-1
+ Goto PrintD
+
+PrintD:
+ If ZonaSel =2 then ACCLCDDispLine2 = "Zona 01"
+ If ZonaSel =3 then ACCLCDDispLine2 = "Zona 02"
+ If ZonaSel =4 then ACCLCDDispLine2 = "Zona 03"
+ If ZonaSel =5 then ACCLCDDispLine2 = "Zona 04"
+ If ZonaSel =6 then ACCLCDDispLine2 = "Zona 05"
+ If ZonaSel =7 then ACCLCDDispLine2 = "Zona 06"
+ If ZonaSel =1 then ACCLCDDispLine2 = "Vse zony"
+
+Goto SelOpt
+
+Podtver:
+  If TS > 0 then 'Scan has run the Else commands already
+    ACCLCDDispMode = 0 'Display mode
+    ACCLCDDispLine1 = "Podtverzhdenie"
+    If ZonaSel =2 then ACCLCDDispLine2 = "Zona 01"
+    If ZonaSel =3 then ACCLCDDispLine2 = "Zona 02"
+    If ZonaSel =4 then ACCLCDDispLine2 = "Zona 03"
+    If ZonaSel =5 then ACCLCDDispLine2 = "Zona 04"
+    If ZonaSel =6 then ACCLCDDispLine2 = "Zona 05"
+    If ZonaSel =7 then ACCLCDDispLine2 = "Zona 06"
+    If ZonaSel =1 then ACCLCDDispLine2 = "Vse zony" 
+
+    ACCLCDDispLine3 = ""
+    ACCLCDDispLine4 = "Da           Net"             'Function menu options
+    If ACCLCDKeyStroke = 17 then
+      ACCLCDKeyStroke = 0
+      Goto SetOh
+    EndIf
+   if  ACCLCDKeyStroke = 19 then goto StopACC
+endif
+
+SetOh:
+ if ZonaSel=1 then
+    num1=1
+    num2=1
+endif
+ if ZonaSel=2 then num1=1
+ if ZonaSel=3 then num2=1
+Goto StopACC
+
+StopACC: 'Stop this program
+  Goto Pass

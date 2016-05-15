@@ -1,0 +1,2 @@
+' create infInput in1421, door A1421
+If in1421 = Off then A1421 PermanentUnlock = True Else A1421 PermanentUnlock = False

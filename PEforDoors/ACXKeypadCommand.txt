@@ -1,0 +1,107 @@
+'This program processes the 'Timed Unlock' keypad code (100) entered
+
+'at a door's keypad.
+
+'The form of the code is 100.xxx where 100 is the code identifier and 'xxx is the amount of time to unlock the door for.
+
+String Str
+
+Numeric KypdCode, DrUnlockTime, SeparatorPos
+
+Line Init
+
+  KypdCode = 0
+
+  Str = ""
+
+  Jetway1 KeypadCommand = 255 'Enable door for keypad input string
+
+  Jetway1 KeypadCommand = 1 'Clear any previous keypad input string
+
+  Goto WaitForKypdCode
+
+Line WaitForKypdCode
+
+'Wait here until something goes in the keypad string
+
+  If len(Jetway1 KeypadString) > 0 then Goto ProcessKypdCode
+
+Line ProcessKypdCode
+
+'The string should contain 2 fields separated by a period
+
+'Get the keypad code identifier which is to the left of the 'separator
+
+  SeparatorPos = search(Jetway1 KeypadString, ".")
+
+  Str = left(Jetway1 KeypadString, SeparatorPos)
+
+  If len(Str) > 0 then KypdCode = StrToNum(Str)
+
+'Now get the unlock time value which is to the right of the separator
+
+  Str = right(Jetway1 KeypadString, (len(Jetway1 KeypadString) - SeparatorPos))
+
+  If len(Str) > 0 then DrUnlockTime = StrToNum(Str)
+
+'The only keypad code this program handles is the time unlock (100)
+
+  If KypdCode = 100 and DrUnlockTime > 0 then
+
+    Goto UnlockDoor
+
+  Else
+
+    Goto InvalidKypdCode
+
+  Endif
+
+ 
+
+Line UnlockDoor
+
+'Flash the valid access LED pattern to give feedback that the
+
+'code has been accepted
+
+  Jetway1 KeypadCommand = 2
+
+'Unlock the door for the time specified in the keypad code
+
+  Jetway1 TimeUnlock = DrUnlockTime
+
+  Goto ClearStr
+
+Line InvalidKypdCode
+
+'Flash the invalid attempt LED pattern to give feedback that
+
+'the code is invalid
+
+  Jetway1 KeypadCommand = 3
+
+  Goto ClearStr
+
+Line ClearStr
+
+  Jetway1 KeypadCommand = 1 'Clear the keypad input string
+
+  KypdCode = 0
+
+  DrUnlockTime = 0
+
+  If len(Jetway1 KeypadString) = 0 then Goto WaitForKypdCode
+
+E:
+
+'Handle error condition
+
+  Jetway1 KeypadCommand = 3
+
+  KypdCode = 0
+
+  DrUnlockTime = 0
+
+  Jetway1 KeypadString = " "
+
+  Goto Init

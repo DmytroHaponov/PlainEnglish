@@ -1,0 +1,112 @@
+  Object : DoorTwoCard
+   Type : InfinityProgram
+   Alias : DoorTwoCard
+   ByteCode : 
+
+' SE Strategic Accounts
+' Rev 20101021 jle
+' Door Control/Two Card Rule
+
+Object DoorForceLock, DoorForceUnlock
+Numeric ValidCard1
+String 128 DoorForceLockStr, DoorForceUnlockStr
+
+Init:
+  DoorForceLockStr = left(<Door Object> DoorForceLckSch, len(<Door Object> DoorForceLckSch))
+  DoorForceUnlockStr = left(<Door Object> DoorForceULckSch, len(<Door Object> DoorForceULckSch))
+  DoorForceLock = getname(DoorForceLockStr)
+  DoorForceUnlock = getname(DoorForceUnlockStr)
+  If (DoorForceUnlock Value) & (DoorForceLock Value) then Goto DoorUnlocked
+  If (<Door Output>) then Goto DoorUnlocked
+  Goto DoorLocked
+
+DoorLocked:
+  <Door Output> = Off
+  If (DoorForceLock Value) then
+    If (<Door Object> ValidAccess) then
+      ValidCard1 = <Door Object> EntryLastCard
+      If (<Door Object> LastPersEntrdDep = 4181) then Goto DoorValidate2
+      If (<Door Object> LastPersEntrdDep = 6765) then Goto DoorValidate2
+    Endif
+    If (DoorForceUnlock Value) then Goto DoorUnlocked
+  Endif
+  If (DoorForceLockStr <> left(<Door Object> DoorForceLckSch, len(<Door Object> DoorForceLckSch))) then Goto Init
+  If (DoorForceUnlockStr <> left(<Door Object> DoorForceULckSch, len(<Door Object> DoorForceULckSch))) then Goto Init
+
+DoorValidate2:
+  <Door Output> = Off
+  If (DoorForceLock Value) then
+    If (<Door Object> ValidAccess) then
+      If (<Door Object> LastPersEntrdDep = 4181) & (<Door Object> EntryLastCard <> ValidCard1) then Goto DoorUnlocked
+      If (<Door Object> LastPersEntrdDep = 6765) & (<Door Object> EntryLastCard <> ValidCard1) then Goto DoorUnlocked
+    Endif
+    If (DoorForceUnlock Value) then Goto DoorUnlocked
+  Endif
+  If (DoorForceLockStr <> left(<Door Object> DoorForceLckSch, len(<Door Object> DoorForceLckSch))) then Goto Init
+  If (DoorForceUnlockStr <> left(<Door Object> DoorForceULckSch, len(<Door Object> DoorForceULckSch))) then Goto Init
+  If (TS > 15) then
+    Goto DoorLocked
+  Endif
+
+DoorUnlocked:
+  <Door Output> = On
+  If (not DoorForceLock Value) then Goto DoorLocked
+  If (not DoorForceUnlock Value) then
+    If (not <Door Object> ValidAccess) & (TS > <Door Object> DoorStrikeTime) then Goto DoorLocked
+    If (<Door Switch Input>) then Goto DoorLocked
+  Endif
+  If (DoorForceLockStr <> left(<Door Object> DoorForceLckSch, len(<Door Object> DoorForceLckSch))) then Goto Init
+  If (DoorForceUnlockStr <> left(<Door Object> DoorForceULckSch, len(<Door Object> DoorForceULckSch))) then Goto Init
+
+E:
+  Goto Init
+   EndByteCode
+   Description : Door Control/Two Card Rule
+   Status : Active
+  EndObject
+
+  Object : DoorStatusAlarms
+   Type : InfinityProgram
+   Alias : DoorStatusAlarms
+   ByteCode : 
+' SE Strategic Accounts
+' Rev 20101021 jle
+' Door Status Alarming
+
+Init:
+  If (<Door Output>) then Goto DoorUnlocked Else Goto DoorLocked
+
+DoorLocked:
+  If (<Door Object> ExitRequest) then Goto DoorExitRequest
+  If (<Door Output>) then Goto DoorUnlocked
+  If (<Door Switch Input> = Trouble) then Goto DoorTrouble
+  If (<Door Switch Input>) then <Door Status Alarm Numeric> = On Else <Door Status Alarm Numeric> = Off
+
+DoorUnlocked:
+  If (<Door Switch Input>) then Goto DoorOpened
+  If (<Door Switch Input> = Trouble) then Goto DoorTrouble
+  If (not <Door Switch Input>) then <Door Status Alarm Numeric> = Off
+  If (not <Door Output>) then Goto DoorLocked
+
+DoorOpened:
+  If (not <Door Switch Input>) & (not <Door Output>) then Goto DoorLocked
+  If (not <Door Switch Input>) & (<Door Output>) then Goto DoorUnlocked
+  If (TS > <Door Object> DoorAjarTime) then <Door Status Alarm Numeric> = -On Else <Door Status Alarm Numeric> = Off
+  If (<Door Switch Input> = Trouble) then Goto DoorTrouble
+
+DoorExitRequest:
+  If (not <Door Object> ExitRequest) & (not <Door Switch Input>) then Goto DoorLocked
+  If (not <Door Object> ExitRequest) & (<Door Switch Input>) then Goto DoorUnlocked
+  If (<Door Switch Input> = Trouble) then Goto DoorTrouble
+
+DoorTrouble:
+  If (<Door Switch Input> <> Trouble) & (not <Door Output>) then Goto DoorLocked
+  If (<Door Switch Input> <> Trouble) & (<Door Output>) then Goto DoorUnlocked
+  <Door Status Alarm Numeric> = "On"
+
+E:
+  Goto Init
+   EndByteCode
+   Description : Door Status Alarming
+   Status : Active
+  EndObject

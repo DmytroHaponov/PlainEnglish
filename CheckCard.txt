@@ -1,0 +1,99 @@
+'Numeric cardindex, cardfound
+
+ReInitialize:
+ If TS < LightTime then Goto ReInitialize
+GreenLight, YellowLight and RedLight = 0
+CardReader = Locked
+
+Waiting4Card:
+  If CardReader = Unlocked then 'vailid access
+    LastCardUsed = CardReader EntryLastCard 'assuming LastPersEntrdDep is card # EntryLastCard is card#
+    Goto CheckCard
+  Endif
+  Goto Waiting4Card
+
+CheckCard:
+  Cardfound = False
+  For CardIndex = 0 to DrinkCards Size  
+    If LastCardUsed = DrinkCards[CardIndex] then
+      Cardfound = True
+      Break
+    Endif
+    If DrinkCards[CardIndex] = -1 then Break 'no more cards to check
+  Next CardIndex
+
+  If Cardfound then Goto CheckCount
+
+  If CardIndex = DrinkCards Size then Goto TooManyCards
+  DrinkCards[CardIndex] = LastCardUsed 'add new card
+
+CheckCount:
+  DrinkCounts[CardIndex] = DrinkCounts[CardIndex] + 1
+
+  GreenLight, YellowLight and RedLight = 0
+  If DrinkCounts[CardIndex] < 2 then GreenLight = LightTime
+  If DrinkCounts[CardIndex] = 2 then YellowLight = LightTime
+  If DrinkCounts[CardIndex] > 2 then RedLight = LightTime
+  Goto Waiting4Card
+
+TooManyCards:
+  GreenLight, YellowLight and RedLight = On
+  If TS < 1 then Goto TooManyCards
+  GreenLight, YellowLight and RedLight = Off
+  If TS < 2 then Goto TooManyCards
+  GreenLight, YellowLight and RedLight = On
+  If TS < 3 then Goto TooManyCards
+  GreenLight, YellowLight and RedLight = Off
+  If TS < 4 then Goto TooManyCards
+  GreenLight, YellowLight and RedLight = On
+  Goto Waiting4Card
+
+
+
+
+
+
+_________________
+Numeric i
+
+ 
+
+Line 1
+
+  If TS > 2 then Goto ClearDrinkCards Else Goto 1
+
+ 
+
+ClearDrinkCards:
+
+  For i = 0 to DrinkCards Size 
+
+    DrinkCards[i] = -1
+
+  Next i
+
+ 
+
+ClearDrinkCounts:
+
+  For i = 0 to DrinkCounts Size 
+
+    DrinkCounts[i] = 0
+
+  Next i
+
+ 
+
+BlinkLightsOn:
+
+  GreenLight, YellowLight and RedLight = 0
+
+  GreenLight, YellowLight and RedLight = 1
+
+ 
+
+Wait4Request:
+
+  If not ResetRequest then Goto Wait4Request
+
+  Goto ClearDrinkCards

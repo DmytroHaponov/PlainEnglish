@@ -1,0 +1,351 @@
+' Date : 08/10/04 12:36:07 PM
+' User : Root\Acc
+' Version : 1.6.0.20031023 SP2
+
+Continuum
+Network
+
+Path : ECC_ControlsNet\Infinity1\XP_Display_Test
+
+Dictionary : 
+
+'TYPE                   : DEVICE                       : NAME                   : TEMPLATE : ALIAS
+ InfinityFunction       : ECC_ControlsNet\Infinity1\XP_Display_Test : XPGetHistVal           : False    : XPGetHistVal
+ InfinityString         : ECC_ControlsNet\Infinity1\XP_Display_Test : XPPointNameArray       : False    : XPPointNameArray
+ InfinityProgram        : ECC_ControlsNet\Infinity1\XP_Display_Test : XPDisplay.Ctrl         : False    : XPDisplay.Ctrl
+ InfinityProgram        : ECC_ControlsNet\Infinity1\XP_Display_Test : XPScanner.Ctrl         : False    : XPScanner.Ctrl
+ InfinityNumeric        : ECC_ControlsNet\Infinity1\XP_Display_Test : XPDispPtNum            : False    : XPDispPtNum
+ InfinityFunction       : ECC_ControlsNet\Infinity1\XP_Display_Test : XPEnDisToggle          : False    : XPEnDisToggle
+ InfinityFunction       : ECC_ControlsNet\Infinity1\XP_Display_Test : XPSetValue             : False    : XPSetValue
+EndDictionary
+
+Object : XPGetHistVal
+ Type : InfinityFunction
+ LastChange : 7/16/2004 3:57:52 PM
+ DeviceId : ECC_ControlsNet\Infinity1\XP_Display_Test
+ Alias : XPGetHistVal
+ CreateTime : 7/16/2004 3:19:29 PM
+ CreatedBy : Root\Acc
+ TimeLocked : 7/16/2004 3:57:52 PM
+ ByteCode : 
+Arg 1 PointName
+Arg 2 HistLog
+Numeric Rtn
+String RtnString
+
+Rtn = PointName[HistLog]
+Return Rtn
+ EndByteCode
+EndObject
+
+Object : XPPointNameArray
+ Type : InfinityString
+ LastChange : 6/25/2004 2:03:15 PM
+ DeviceId : ECC_ControlsNet\Infinity1\XP_Display_Test
+ Alias : XPPointNameArray
+ CreateTime : 6/25/2004 2:03:10 PM
+ CreatedBy : Root\Acc
+ TimeLocked : 6/29/2004 3:51:07 PM
+ Size : 120
+ Port : 
+ StringSize : 32
+ Triggers : 
+ {
+ }
+ EndOfCDT
+EndObject
+
+Object : XPDisplay.Ctrl
+ Type : InfinityProgram
+ LastChange : 7/28/2004 1:15:27 PM
+ DeviceId : ECC_ControlsNet\Infinity1\XP_Display_Test
+ Alias : XPDisplay.Ctrl
+ CreateTime : 6/25/2004 2:03:09 PM
+ CreatedBy : Root\Acc
+ TimeLocked : 7/28/2004 1:15:27 PM
+ ByteCode : 
+' XPDisplay.Ctrl program V1.1 - 7-28-04 - SRE,ECC Controls
+Numeric XP.Index, LogInterval, LogIndex, LogSize, HistDirection, HistValue
+Datetime LastLogTime, LogTime
+String TruncLogTime, AMorPM, DispFormat, XPAnswerStrBuffe, MinuteValue
+Setup:
+  HistDirection = 1
+  Goto Checking
+Checking:
+  XP.Index = 1
+'  acclcddispline1 = "Andover Controls"
+'  acclcddispline2 = "By ECC Controls"
+'  acclcddispline3 = ""
+'  print  "|*", Date to acclcddispline4
+  ACCLCDDispMode = 8
+  If ACCLCDBacklight > 0 then
+'ACCLCDKeyStroke = 0
+    Goto OvervwDisplay
+  Endif
+
+OvervwDisplay:
+  Set ACCLCDDispMode to 0
+  Print "|@@@@@@@@@@@" ; "=" ; "|#.###", XPPointNameArray[XP.Index], getname(XPPointNameArray[XP.Index]) to ACCLCDDispLine1
+  Print "|@@@@@@@@@@@" ; "=" ; "|#.###", XPPointNameArray[XP.Index + 1], getname(XPPointNameArray[XP.Index + 1]) to ACCLCDDispLine2
+  Print "|@@@@@@@@@@@" ; "=" ; "|#.###", XPPointNameArray[XP.Index + 2], getname(XPPointNameArray[XP.Index + 2]) to ACCLCDDispLine3
+  Print "|@@@@@@@@@@@" ; "=" ; "|#.###", XPPointNameArray[XP.Index + 3], getname(XPPointNameArray[XP.Index + 3]) to ACCLCDDispLine4
+  If ACCLCDKeyStroke = 13 then
+    ACCLCDKeyStroke = 0
+    XP.Index = XP.Index - 4
+    If XP.Index < 1 then XP.Index = maximum(1, XPDispPtNum - 4)
+  Endif
+  If ACCLCDKeyStroke = 14 then
+    ACCLCDKeyStroke = 0
+    XP.Index = XP.Index + 4
+    If XP.Index >= XPDispPtNum then XP.Index = 1
+    If XP.Index > XPDispPtNum - 3 then XP.Index = XPDispPtNum - 4
+  Endif
+  If ACCLCDBacklight = 0 then Goto Checking
+  If ACCLCDKeyStroke = 20 then Goto DetailDisplay
+
+DetailDisplay:
+  Set ACCLCDDispMode to 0
+  Print "|@@@@@@@@@@@@@@@@", XPPointNameArray[XP.Index], getname(XPPointNameArray[XP.Index]) to ACCLCDDispLine1
+  Print "Value=|#.##  |<@@@", getname(XPPointNameArray[XP.Index]), getname(XPPointNameArray[XP.Index] ; " state") to ACCLCDDispLine2
+  Print " " to ACCLCDDispLine3
+  Print "En/Dis Hist Edit" to ACCLCDDispLine4
+  If ACCLCDKeyStroke = 17 then
+    XPEnDisToggle(getname(XPPointNameArray[XP.Index]))
+  Endif
+  If ACCLCDKeyStroke = 18 then
+    ACCLCDKeyStroke = 0
+    If getname(XPPointNameArray[XP.Index] ; " size") = 0 then
+      Goto NoHistory
+    Else
+      LogIndex = 0
+      Goto HistDisplay
+    Endif
+  Endif
+  If ACCLCDKeyStroke = 13 then
+    XP.Index = XP.Index - 1
+    If XP.Index < 1 then XP.Index = maximum(1, XPDispPtNum - 1)
+  Endif
+  If ACCLCDKeyStroke = 14 then
+    XP.Index = XP.Index + 1
+    If XP.Index >= XPDispPtNum then XP.Index = 1
+  Endif
+  If ACCLCDBacklight = 0 then Goto Checking
+  If ACCLCDKeyStroke = 19 then
+    ACCLCDKeyStroke = 0
+    Goto EditValue
+  Endif
+  If ACCLCDKeyStroke = 21 then Goto OvervwDisplay
+  ACCLCDKeyStroke = 0
+
+NoHistory:
+  Print "No Hist Config'd" to ACCLCDDispLine3
+  If TS > 3 then Goto DetailDisplay
+
+EditValue:
+  ACCLCDDispMode = 1
+  DispFormat = getname(XPPointNameArray[XP.Index] ; " format")
+  If left(getname(XPPointNameArray[XP.Index] ; " format"), 1) = "$" then Set ACCLCDDispMode = 2 Else ACCLCDDispMode = 1
+  Print "|@@@@@@@@@@@@@@@@", XPPointNameArray[XP.Index], getname(XPPointNameArray[XP.Index]) to ACCLCDDispLine1
+  Print "Value=|#.##  |<@@@", getname(XPPointNameArray[XP.Index]), getname(XPPointNameArray[XP.Index] ; " state") to ACCLCDDispLine2
+  Print "|*", getname(XPPointNameArray[XP.Index]) to ACCLCDDispLine3
+  Print "Accept    Cancel" to ACCLCDDispLine4
+  Goto EditValueWait
+EditValueWait:
+  If ACCLCDAnswerStr <> "0" then XPAnswerStrBuffe = ACCLCDAnswerStr
+  If ACCLCDKeyStroke = 16 or ACCLCDKeyStroke = 17 then
+    XPSetValue(getname(XPPointNameArray[XP.Index]), XPAnswerStrBuffe)
+    ACCLCDKeyStroke = 0
+    Goto DetailDisplay
+  Endif
+  If ACCLCDKeyStroke = 19 then
+    ACCLCDKeyStroke = 0
+    Goto DetailDisplay
+  Endif
+
+HistDisplay:
+  Print "|@@@@@@@@@@@@@@@@", XPPointNameArray[XP.Index], getname(XPPointNameArray[XP.Index]) to ACCLCDDispLine1
+  Print "Up   Pause  Down" to ACCLCDDispLine4
+  LogSize = getname(XPPointNameArray[XP.Index] ; " size")
+  LogInterval = getname(XPPointNameArray[XP.Index] ; " logintervalsecs")
+  LastLogTime = getname(XPPointNameArray[XP.Index] ; " lastlogtime")
+  LogTime = LastLogTime - (LogInterval * LogIndex)
+  If timepiece(Hourofday, LogTime) < 12 then AMorPM = "A" Else AMorPM = "P"
+  If timepiece(Minute, LogTime) < 10 then MinuteValue = "0" ; NumToStr(timepiece(Minute, LogTime)) Else MinuteValue = NumToStr(timepiece(Minute, LogTime))
+  HistValue = XPGetHistVal(getname(XPPointNameArray[XP.Index]), LogIndex)
+  Print "|## |##:|@@|@  |###.#", timepiece(Dayofmonth, LogTime), timepiece(Hour, LogTime), MinuteValue, AMorPM, HistValue to ACCLCDDispLine2
+  If ACCLCDKeyStroke = 15 then
+    ACCLCDKeyStroke = 0
+    Goto DetailDisplay
+  Endif
+  ACCLCDKeyStroke = 0
+  Goto HistDisplayTD
+
+HistDisplayTD:
+  If ACCLCDKeyStroke = 15 then
+    ACCLCDKeyStroke = 0
+    Goto DetailDisplay
+  Endif
+  If ACCLCDKeyStroke = 18 then
+    ACCLCDKeyStroke = 0
+    Goto HistDispPause
+  Endif
+  If ACCLCDKeyStroke = 19 or ACCLCDKeyStroke = 14 then HistDirection = 1
+  If ACCLCDKeyStroke = 17 or ACCLCDKeyStroke = 13 then HistDirection = -1
+  If TS >= 3 then
+    LogIndex = LogIndex + HistDirection
+    If LogIndex > LogSize then LogIndex = 1
+    If LogIndex < 1 then LogIndex = LogSize
+    Goto HistDisplay
+  Endif
+  ACCLCDKeyStroke = 0
+
+HistDispPause:
+  Print "Up  Resume  Down" to ACCLCDDispLine4
+  If ACCLCDKeyStroke = 18 then
+    ACCLCDKeyStroke = 0
+    Goto HistDisplay
+  Endif
+
+E:
+  Print "ERROR" to ACCLCDDispLine1
+  Print " " to ACCLCDDispLine2
+  Print " " to ACCLCDDispLine3
+  Print " " to ACCLCDDispLine4
+
+  If TS > 5 then Goto Setup
+
+
+
+
+
+
+
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : XPScanner.Ctrl
+ Type : InfinityProgram
+ LastChange : 7/28/2004 1:16:13 PM
+ DeviceId : ECC_ControlsNet\Infinity1\XP_Display_Test
+ Alias : XPScanner.Ctrl
+ CreateTime : 6/25/2004 2:03:09 PM
+ CreatedBy : Root\Acc
+ TimeLocked : 7/28/2004 1:16:13 PM
+ ByteCode : 
+' XPScanner.Ctrl program V1.1 - 7-28-04 - SRE,ECC Controls
+Object PointName
+String ObjectType[4]
+Numeric Result, Index, PtTotalBuff
+Setup:
+  Print "Input" to ObjectType[1]
+  Print "Output" to ObjectType[2]
+  Print "Numeric" to ObjectType[3]
+  Print "String" to ObjectType[4]
+  Index = 1
+  Goto Wait
+Wait:
+  XPDispPtNum = PtTotalBuff
+  If TM > 10 then Goto Starting
+
+Starting:
+  Index = 1
+  PtTotalBuff = 0
+  Goto OpenPtList
+OpenPtList:
+  Result = OpenList(ObjectType[Index], PointName)
+  If Result = Success then
+    Goto GetPointName
+  Else
+    Goto OpenPtListFail
+  Endif
+GetPointName:
+  Result = GetObject(PointName)
+  If Result <> Success then Goto ClosePointList
+  If left(PointName, 3) <> "ACC" or left(PointName, 2) <> "XP" then
+    PtTotalBuff = PtTotalBuff + 1
+    XPPointNameArray[PtTotalBuff] = PointName Name
+  Endif
+ClosePointList:
+  Result = CloseList(PointName)
+  If Result = Success then Goto NextType Else Goto ClosePtListFail
+OpenPtListFail:
+  If TM >= 1 then
+    Result = CloseList(PointName)
+    Goto OpenPtList
+  Endif
+ClosePtListFail:
+  If TM >= 1 then Goto ClosePointList
+
+NextType:
+  Index = Index + 1
+  If Index > 3 then Goto Wait
+  Goto OpenPtList
+
+E:
+  If TM >= 1 then
+    Result = CloseList(PointName)
+    Goto Wait
+  Endif
+
+
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : XPDispPtNum
+ Type : InfinityNumeric
+ LastChange : 6/25/2004 2:03:13 PM
+ DeviceId : ECC_ControlsNet\Infinity1\XP_Display_Test
+ Alias : XPDispPtNum
+ CreateTime : 6/25/2004 2:03:09 PM
+ CreatedBy : Root\Acc
+ TimeLocked : 6/29/2004 4:21:30 PM
+ Format : ###.#
+ Port : 
+ Triggers : 
+ {
+ }
+ EndOfCDT
+ Value :   0.0
+EndObject
+
+Object : XPEnDisToggle
+ Type : InfinityFunction
+ LastChange : 6/25/2004 2:03:11 PM
+ DeviceId : ECC_ControlsNet\Infinity1\XP_Display_Test
+ Alias : XPEnDisToggle
+ CreateTime : 6/25/2004 2:03:08 PM
+ CreatedBy : Root\Acc
+ TimeLocked : 7/16/2004 3:02:49 PM
+ ByteCode : 
+Arg 1 PointName
+If PointName State = Enabled then PointName State = Disabled Else PointName State = Enabled
+Return
+ EndByteCode
+EndObject
+
+Object : XPSetValue
+ Type : InfinityFunction
+ LastChange : 6/29/2004 4:11:11 PM
+ DeviceId : ECC_ControlsNet\Infinity1\XP_Display_Test
+ Alias : XPSetValue
+ CreateTime : 6/25/2004 2:03:08 PM
+ CreatedBy : Root\Acc
+ TimeLocked : 7/16/2004 3:12:24 PM
+ ByteCode : 
+Arg 1 PointName
+Arg 2 PointValue
+If PointValue = "on" then
+  Set PointName Value = On
+Else
+  If PointValue = "off" then
+    Set PointName Value = Off
+  Else
+    Set PointName Value = StrToNum(PointValue)
+  Endif
+Endif
+Return
+ EndByteCode
+EndObject
+

@@ -1,0 +1,29 @@
+'Looping Program that will allow access with two man rule only
+'You have to remove the Channel numbers for DoorSwitch and DoorOutput 
+'Create a separate output and input to monitor and control door.
+Numeric Num1, NumCheck, Num2
+NumCheck = 20
+Goto CheckAccess
+
+Line CheckAccess
+  Num1 = DoorR06 EntryLastCard
+  If DoorR06 ValidAccess is True and DoorRDeptPoint = NumCheck then
+    Goto CheckNext
+  Endif
+Line CheckNext
+  Num2 = DoorR06 EntryLastCard
+  If DoorR06 ValidAccess is True and DoorRDeptPoint = NumCheck then Goto Validate
+  If TS > 15 then Goto TryAgain
+
+Line Validate
+  If Num1 = Num2 then Goto TryAgain
+
+  DoorR06Output = On
+  If TS > 10 then Goto TryAgain
+
+
+Line TryAgain
+  Num1 = 0
+  Num2 = 0
+  DoorR06Output = Off
+  Goto CheckAccess

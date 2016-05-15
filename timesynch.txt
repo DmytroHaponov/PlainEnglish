@@ -1,0 +1,5 @@
+If Minute = 28 then Set secondFloor\serv\Date to Date
+If Minute = 29 then Set firstFloor\k1123\Date to Date
+If Minute = 30 then Set thirdFloor\k3118\Date to Date
+If Minute = 31 then Set fourthFloor\k4265\Date to Date
+If Minute = 32 then Set basement\B1.20\Date to Date

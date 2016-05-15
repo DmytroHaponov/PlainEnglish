@@ -1,0 +1,65 @@
+'This program chooses which turnstile to open
+
+
+
+String Str
+Numeric KypdCode
+
+Line Init
+  KypdCode = 0
+  Str = ""
+  slide12n KeypadCommand = 255 'Enable door for keypad input string
+  slide12n KeypadCommand = 1 'Clear any previous keypad input string
+  Goto WaitForKypdCode
+
+Line WaitForKypdCode
+'Wait here until something goes in the keypad string 
+  If len(slide12n KeypadString) > 0 then Goto ProcessKypdCode
+
+Line ProcessKypdCode
+Str=KeypadString 
+KypdCode = StrToNum(Str)
+
+
+'choosing which door to open  
+  If KypdCode = 1 then Goto openTurn1 
+ElseIf KypdCode = 2 then Goto openTurn2 
+ElseIf KypdCode = 3 then Goto openTurn3
+.....
+
+ElseIf Else Goto InvalidKypdCode
+
+
+Line openTurn1
+  turnstile1 TimeUnlock = 7 'Unlock the turnstile for 7 sec
+  Goto ClearStr
+
+Line openTurn2
+  turnstile2 TimeUnlock = 7 'Unlock the turnstile for 7 sec
+  Goto ClearStr
+
+Line openTurn3
+  turnstile3 TimeUnlock = 7 'Unlock the turnstile for 7 sec
+  Goto ClearStr
+.....
+
+
+Line InvalidKypdCode
+  slide12n KeypadCommand = 3 'Flash the invalid attempt LED pattern to give feedback that the code is invalid
+  Goto ClearStr
+
+Line ClearStr
+  slide12n KeypadCommand = 1 'Clear the keypad input string
+  KypdCode = 0
+  slide12n KeypadString = ""
+   If len(slide12n KeypadString) = 0 then Goto WaitForKypdCode
+
+E:
+'Handle error condition
+  slide12n KeypadCommand = 3
+  KypdCode = 0
+   slide12n KeypadString = ""
+  Goto Init
+
+
+

@@ -1,0 +1,3593 @@
+' Date : 06/16/03 08:57:22 AM
+' User : Root\Acc
+' Version : 1.5.0.20021004
+
+Continuum
+Network
+
+Path : 
+
+Dictionary : 
+
+'TYPE                   : DEVICE                       : NAME                   : TEMPLATE : ALIAS
+ Network                :                              : LabLD1                 : False    : Infinity : LabLD1
+EndDictionary
+
+Dictionary : LabLD1
+
+ 'TYPE                   : NAME                   : TEMPLATE : PORT  : SERIALNUM    : INFINETID  : MODEL      : ALIAS
+  InfinityController     : Infinity1              : False    :       : 0            : 1          : 9900       : Infinity1
+ Dictionary : Infinity1
+
+  'TYPE                   : DEVICE                       : NAME                   : TEMPLATE : ALIAS
+   ControllerUser         : LabLD1\Infinity1             : ACC                    : False    : ACC
+
+  'TYPE                   : DEVICE                       : NAME                   : TEMPLATE : IOU
+   IOUModule              : LabLD1\Infinity1             : LD1                    : False    : 1    : LD1
+
+  'TYPE                   : DEVICE                       : NAME                   : TEMPLATE : ALIAS
+   InfinityDateTime       : LabLD1\Infinity1             : AllowedTime            : False    : AllowedTime
+   InfinityDateTime       : LabLD1\Infinity1             : CalcTime               : False    : CalcTime
+   InfinityDateTime       : LabLD1\Infinity1             : LD1DateTime            : False    : LD1DateTime
+   InfinityDateTime       : LabLD1\Infinity1             : LogTime                : False    : LogTime
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOffTime1          : False    : SchedOffTime1
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOffTime2          : False    : SchedOffTime2
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOffTime2          : False    : SchedOffTime3
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOffTime4          : False    : SchedOffTime4
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOffTime5          : False    : SchedOffTime5
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOffTime6          : False    : SchedOffTime6
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOffTime7          : False    : SchedOffTime7
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOffTime8          : False    : SchedOffTime8
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOnTime1           : False    : SchedOnTime1
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOnTime2           : False    : SchedOnTime2
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOnTime3           : False    : SchedOnTime3
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOnTime4           : False    : SchedOnTime4
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOnTime5           : False    : SchedOnTime5
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOnTime6           : False    : SchedOnTime6
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOnTime7           : False    : SchedOnTime7
+   InfinityDateTime       : LabLD1\Infinity1             : SchedOnTime8           : False    : SchedOnTime8
+   InfinityNumeric        : LabLD1\Infinity1             : AcceptDelay            : False    : AcceptDelay
+   InfinityNumeric        : LabLD1\Infinity1             : Boost                  : False    : Boost
+   InfinityNumeric        : LabLD1\Infinity1             : CursorPosition         : False    : CursorPosition
+   InfinityNumeric        : LabLD1\Infinity1             : CXSched1               : False    : CXSched1
+   InfinityNumeric        : LabLD1\Infinity1             : CXSched2               : False    : CXSched2
+   InfinityNumeric        : LabLD1\Infinity1             : CXSched3               : False    : CXSched3
+   InfinityNumeric        : LabLD1\Infinity1             : CXSched4               : False    : CXSched4
+   InfinityNumeric        : LabLD1\Infinity1             : CXSched5               : False    : CXSched5
+   InfinityNumeric        : LabLD1\Infinity1             : CXSched6               : False    : CXSched6
+   InfinityNumeric        : LabLD1\Infinity1             : CXSched7               : False    : CXSched7
+   InfinityNumeric        : LabLD1\Infinity1             : CXSched8               : False    : CXSched8
+   InfinityNumeric        : LabLD1\Infinity1             : DisplayMode            : False    : DisplayMode
+   InfinityNumeric        : LabLD1\Infinity1             : Dummy                  : False    : Dummy
+   InfinityNumeric        : LabLD1\Infinity1             : Heating1               : False    : Heating1
+   InfinityNumeric        : LabLD1\Infinity1             : KeyMute                : False    : KeyMute
+   InfinityNumeric        : LabLD1\Infinity1             : KeyStroke              : False    : KeyStroke
+   InfinityNumeric        : LabLD1\Infinity1             : LD1_SchedSel           : False    : LD1_SchedSel
+   InfinityNumeric        : LabLD1\Infinity1             : MaxStart               : False    : MaxStart
+   InfinityNumeric        : LabLD1\Infinity1             : MaxStop                : False    : MaxStop
+   InfinityNumeric        : LabLD1\Infinity1             : OAT                    : False    : OAT
+   InfinityNumeric        : LabLD1\Infinity1             : SLA                    : False    : SLA
+   InfinityNumeric        : LabLD1\Infinity1             : SpaceTemp              : False    : SpaceTemp
+   InfinityNumeric        : LabLD1\Infinity1             : StartSP                : False    : StartSP
+   InfinityNumeric        : LabLD1\Infinity1             : StopSP                 : False    : StopSP
+   InfinityNumeric        : LabLD1\Infinity1             : TimeFormat             : False    : TimeFormat
+   InfinityNumeric        : LabLD1\Infinity1             : WarmUp                 : False    : WarmUp
+   InfinityOutput         : LabLD1\Infinity1             : Beeper                 : False    : Beeper
+   InfinityOutput         : LabLD1\Infinity1             : DispBacklight          : False    : DispBacklight
+   InfinityOutput         : LabLD1\Infinity1             : GreenLED               : False    : GreenLED
+   InfinityOutput         : LabLD1\Infinity1             : KeyBacklight           : False    : KeyBacklight
+   InfinityOutput         : LabLD1\Infinity1             : RedLED                 : False    : RedLED
+   InfinityString         : LabLD1\Infinity1             : AnswerString           : False    : AnswerString
+   InfinityString         : LabLD1\Infinity1             : DisplayLine1           : False    : DisplayLine1
+   InfinityString         : LabLD1\Infinity1             : DisplayLine2           : False    : DisplayLine2
+   InfinityString         : LabLD1\Infinity1             : DisplayLine3           : False    : DisplayLine3
+   InfinityString         : LabLD1\Infinity1             : DisplayLine4           : False    : DisplayLine4
+   InfinityString         : LabLD1\Infinity1             : LD1CtrlName            : False    : LD1CtrlName
+   InfinityString         : LabLD1\Infinity1             : LD1InfCtrlName         : False    : LD1InfCtrlName
+   InfinityString         : LabLD1\Infinity1             : LD1PointType           : False    : LD1PointType
+   InfinityString         : LabLD1\Infinity1             : LD1UserType            : False    : LD1UserType
+   Group                  : LabLD1\Infinity1             : FiringOrder            : False    : FiringOrder
+   InfinityFunction       : LabLD1\Infinity1             : CXSched                : False    : CXSched
+   InfinityFunction       : LabLD1\Infinity1             : GetLog                 : False    : GetLog
+   InfinityFunction       : LabLD1\Infinity1             : LD1_DispClear          : False    : LD1_DispClear
+   InfinityFunction       : LabLD1\Infinity1             : Optimum                : False    : Optimum
+   InfinityFunction       : LabLD1\Infinity1             : PassLog                : False    : PassLog
+   InfinityProgram        : LabLD1\Infinity1             : LD1_Password           : False    : LD1_Password
+   InfinityProgram        : LabLD1\Infinity1             : LD1_Init               : False    : LD1_Init
+   InfinityProgram        : LabLD1\Infinity1             : LD1_SelectPtType       : False    : LD1_SelectPtType
+   InfinityProgram        : LabLD1\Infinity1             : LD1_InfControl         : False    : LD1_InfControl
+   InfinityProgram        : LabLD1\Infinity1             : CxScheduleCall         : False    : CxScheduleCall
+   InfinityProgram        : LabLD1\Infinity1             : LD1_MenuSelect         : False    : LD1_MenuSelect
+   InfinityProgram        : LabLD1\Infinity1             : LD1_DispOrEditPt       : False    : LD1_DispOrEditPt
+   InfinityProgram        : LabLD1\Infinity1             : LD1_Scheduler          : False    : LD1_Scheduler
+   InfinityProgram        : LabLD1\Infinity1             : LD1_RTCset             : False    : LD1_RTCset
+   InfinityProgram        : LabLD1\Infinity1             : Ex_OptCall             : False    : Ex_OptCall
+
+  'TYPE                   : DEVICE                       : NAME                   : TEMPLATE : DEFAULTMODE   : BAUD       : ALIAS
+   CommPort               : LabLD1\Infinity1             : comm1                  : False    : Infinet       : Baud19200  : comm1
+   CommPort               : LabLD1\Infinity1             : comm16                 : False    : LON           : Baud19200  : comm16
+   CommPort               : LabLD1\Infinity1             : comm2                  : False    : Infinet       : Baud19200  : comm2
+   CommPort               : LabLD1\Infinity1             : comm3                  : False    : AutoSet       : Baud9600   : comm3
+   CommPort               : LabLD1\Infinity1             : comm4                  : False    : NotConfigured : Baud9600   : comm4
+
+  'TYPE                   : DEVICE                       : NAME                   : TEMPLATE : ALIAS
+   InfinitySystemVariable : LabLD1\Infinity1             : AccessLog              : False    : AccessLog
+   InfinitySystemVariable : LabLD1\Infinity1             : AccessServer           : False    : AccessServer
+   InfinitySystemVariable : LabLD1\Infinity1             : Alarms                 : False    : Alarms
+   InfinitySystemVariable : LabLD1\Infinity1             : AvailRecords           : False    : AvailRecords
+   InfinitySystemVariable : LabLD1\Infinity1             : CpuPower               : False    : CpuPower
+   InfinitySystemVariable : LabLD1\Infinity1             : Date                   : False    : Date
+   InfinitySystemVariable : LabLD1\Infinity1             : Dayofmonth             : False    : Dayofmonth
+   InfinitySystemVariable : LabLD1\Infinity1             : Dayofyear              : False    : Dayofyear
+   InfinitySystemVariable : LabLD1\Infinity1             : Errors                 : False    : Errors
+   InfinitySystemVariable : LabLD1\Infinity1             : EventLogSize           : False    : EventLogSize
+   InfinitySystemVariable : LabLD1\Infinity1             : Freemem                : False    : Freemem
+   InfinitySystemVariable : LabLD1\Infinity1             : Hour                   : False    : Hour
+   InfinitySystemVariable : LabLD1\Infinity1             : Hourofday              : False    : Hourofday
+   InfinitySystemVariable : LabLD1\Infinity1             : Infinet1Count          : False    : Infinet1Count
+   InfinitySystemVariable : LabLD1\Infinity1             : Infinet2Count          : False    : Infinet2Count
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt1            : False    : Ioucommflt1
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt10           : False    : Ioucommflt10
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt11           : False    : Ioucommflt11
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt12           : False    : Ioucommflt12
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt13           : False    : Ioucommflt13
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt14           : False    : Ioucommflt14
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt15           : False    : Ioucommflt15
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt16           : False    : Ioucommflt16
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt2            : False    : Ioucommflt2
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt3            : False    : Ioucommflt3
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt4            : False    : Ioucommflt4
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt5            : False    : Ioucommflt5
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt6            : False    : Ioucommflt6
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt7            : False    : Ioucommflt7
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt8            : False    : Ioucommflt8
+   InfinitySystemVariable : LabLD1\Infinity1             : Ioucommflt9            : False    : Ioucommflt9
+   InfinitySystemVariable : LabLD1\Infinity1             : IOUPower               : False    : IOUPower
+   InfinitySystemVariable : LabLD1\Infinity1             : Minute                 : False    : Minute
+   InfinitySystemVariable : LabLD1\Infinity1             : ModemPower             : False    : ModemPower
+   InfinitySystemVariable : LabLD1\Infinity1             : Month                  : False    : Month
+   InfinitySystemVariable : LabLD1\Infinity1             : NewAlarmCount          : False    : NewAlarmCount
+   InfinitySystemVariable : LabLD1\Infinity1             : PowerFail              : False    : PowerFail
+   InfinitySystemVariable : LabLD1\Infinity1             : PowerUpTime            : False    : PowerUpTime
+   InfinitySystemVariable : LabLD1\Infinity1             : Scan                   : False    : Scan
+   InfinitySystemVariable : LabLD1\Infinity1             : Second                 : False    : Second
+   InfinitySystemVariable : LabLD1\Infinity1             : Status1                : False    : Status1
+   InfinitySystemVariable : LabLD1\Infinity1             : Status2                : False    : Status2
+   InfinitySystemVariable : LabLD1\Infinity1             : Status3                : False    : Status3
+   InfinitySystemVariable : LabLD1\Infinity1             : Status4                : False    : Status4
+   InfinitySystemVariable : LabLD1\Infinity1             : Status5                : False    : Status5
+   InfinitySystemVariable : LabLD1\Infinity1             : Status6                : False    : Status6
+   InfinitySystemVariable : LabLD1\Infinity1             : Status7                : False    : Status7
+   InfinitySystemVariable : LabLD1\Infinity1             : Status8                : False    : Status8
+   InfinitySystemVariable : LabLD1\Infinity1             : SystemStatus           : False    : SystemStatus
+   InfinitySystemVariable : LabLD1\Infinity1             : Timeofday              : False    : Timeofday
+   InfinitySystemVariable : LabLD1\Infinity1             : UniquePin              : False    : UniquePin
+   InfinitySystemVariable : LabLD1\Infinity1             : Version                : False    : Version
+   InfinitySystemVariable : LabLD1\Infinity1             : Weekday                : False    : Weekday
+   InfinitySystemVariable : LabLD1\Infinity1             : Year                   : False    : Year
+ EndDictionary
+
+EndDictionary
+
+Object : LabLD1
+ Type : Network
+ LastChange : 01/22/03 01:31:23 PM
+ Owner : Root
+ Alias : LabLD1
+ CreateTime : 01/22/03 01:31:12 PM
+ CreatedBy : Root\Acc
+ TimeLocked : 01/22/03 01:31:23 PM
+ SynchDB : False
+ NetworkUTCOffset : 0
+EndObject
+
+Site : LabLD1
+ Object : Infinity1
+  Type : InfinityController
+  LastChange : 05/27/03 10:21:58 AM
+  DeviceId : LabLD1
+  Alias : Infinity1
+  CreateTime : 01/22/03 01:31:12 PM
+  CreatedBy : Root\Acc
+  TimeLocked : 06/13/03 04:32:22 PM
+  DefaultRouter : 0.0.0.0
+  EthernetId : 0:0:0:0:0:0
+  IPAddress : 172.17.47.1
+  NetworkId : 1
+  SubnetMask : 255.255.0.0
+  PPPSubnetMask : 0.0.0.0
+  VersionNum : 1.500029
+ EndObject
+
+ BeginController : Infinity1
+  Object : ACC
+   Type : ControllerUser
+   LastChange : 01/22/03 01:31:23 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : ACC
+   CreateTime : 01/22/03 01:31:16 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:23 PM
+   Properties : 1
+   FullName : ACC
+   Password : PÏ¬ï“
+   SecurityLevel : Admin
+  EndObject
+
+  Object : LD1
+   Type : IOUModule
+   LastChange : 05/27/03 10:26:31 AM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1
+   CreateTime : 01/22/03 01:31:16 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 05/28/03 08:39:23 AM
+   IOU : 1
+   ModuleID : 00-C0-14-61-00-00
+   ProgramID : 95:11:01:21:02:0F:00:00
+   ModelName : LD-1
+  EndObject
+
+  Object : AllowedTime
+   Type : InfinityDateTime
+   LastChange : 06/12/03 12:23:14 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : AllowedTime
+   CreateTime : 06/12/03 12:23:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 12:23:14 PM
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : CalcTime
+   Type : InfinityDateTime
+   LastChange : 05/29/03 02:58:45 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : CalcTime
+   CreateTime : 05/29/03 02:58:45 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 11:50:11 AM
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : LD1DateTime
+   Type : InfinityDateTime
+   LastChange : 01/27/03 11:54:10 AM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1DateTime
+   CreateTime : 01/22/03 01:31:16 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 01:18:40 PM
+   Channel : 6
+   IODirection : IOOutput
+   IOU : 1
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/27/03 11:53:12 AM
+  EndObject
+
+  Object : LogTime
+   Type : InfinityDateTime
+   LastChange : 05/29/03 02:57:53 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : LogTime
+   CreateTime : 05/29/03 02:57:53 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 10:37:33 AM
+   Size : 7
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : SchedOffTime1
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:05:36 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOffTime1
+   CreateTime : 01/22/03 04:26:12 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 04:24:53 PM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/27/03 12:20:00 PM
+  EndObject
+
+  Object : SchedOffTime2
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:05:44 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOffTime2
+   CreateTime : 01/29/03 02:04:20 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/11/03 01:29:36 PM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/27/03 12:20:00 PM
+  EndObject
+
+  Object : SchedOffTime2
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:05:52 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOffTime3
+   CreateTime : 01/29/03 02:04:38 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 05/28/03 09:56:42 AM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/27/03 12:20:00 PM
+  EndObject
+
+  Object : SchedOffTime4
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:06:01 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOffTime4
+   CreateTime : 01/29/03 02:05:24 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 03:06:01 PM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/27/03 12:20:00 PM
+  EndObject
+
+  Object : SchedOffTime5
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:06:11 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOffTime5
+   CreateTime : 01/29/03 02:05:31 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 03:06:11 PM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/27/03 12:20:00 PM
+  EndObject
+
+  Object : SchedOffTime6
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:06:18 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOffTime6
+   CreateTime : 01/29/03 02:05:36 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 11:32:07 AM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/27/03 12:20:00 PM
+  EndObject
+
+  Object : SchedOffTime7
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:06:25 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOffTime7
+   CreateTime : 01/29/03 02:05:39 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 03:06:25 PM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/27/03 12:20:00 PM
+  EndObject
+
+  Object : SchedOffTime8
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:06:36 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOffTime8
+   CreateTime : 01/29/03 02:05:44 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 03:06:36 PM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/27/03 12:20:00 PM
+  EndObject
+
+  Object : SchedOnTime1
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:06:47 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOnTime1
+   CreateTime : 01/22/03 04:25:44 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 11:50:16 AM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/01/01
+  EndObject
+
+  Object : SchedOnTime2
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:06:56 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOnTime2
+   CreateTime : 01/29/03 02:04:12 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 03:06:56 PM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/01/01
+  EndObject
+
+  Object : SchedOnTime3
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:07:06 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOnTime3
+   CreateTime : 01/29/03 02:04:50 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 03:07:06 PM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/01/01
+  EndObject
+
+  Object : SchedOnTime4
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:07:15 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOnTime4
+   CreateTime : 01/29/03 02:04:57 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 03:07:15 PM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/01/01
+  EndObject
+
+  Object : SchedOnTime5
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:07:22 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOnTime5
+   CreateTime : 01/29/03 02:05:01 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 03:07:22 PM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/01/01
+  EndObject
+
+  Object : SchedOnTime6
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:07:35 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOnTime6
+   CreateTime : 01/29/03 02:05:06 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 03:07:35 PM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/01/01
+  EndObject
+
+  Object : SchedOnTime7
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:07:42 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOnTime7
+   CreateTime : 01/29/03 02:05:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 03:07:42 PM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/01/01
+  EndObject
+
+  Object : SchedOnTime8
+   Type : InfinityDateTime
+   LastChange : 01/29/03 03:07:50 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SchedOnTime8
+   CreateTime : 01/29/03 02:05:19 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 11:32:00 AM
+   Size : 14
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/01/01
+  EndObject
+
+  Object : AcceptDelay
+   Type : InfinityNumeric
+   LastChange : 01/22/03 01:31:24 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : AcceptDelay
+   CreateTime : 01/22/03 01:31:16 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/24/03 04:51:29 PM
+   Channel : 14
+   Format : #.#
+   IODirection : IOOutput
+   IOU : 1
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 0.0
+  EndObject
+
+  Object : Boost
+   Type : InfinityNumeric
+   LastChange : 05/30/03 10:35:02 AM
+   DeviceId : LabLD1\Infinity1
+   Alias : Boost
+   CreateTime : 05/29/03 03:12:30 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/02/03 10:56:41 AM
+   Format : ###
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value :   0
+  EndObject
+
+  Object : CursorPosition
+   Type : InfinityNumeric
+   LastChange : 01/22/03 01:31:24 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : CursorPosition
+   CreateTime : 01/22/03 01:31:16 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 05/27/03 10:26:41 AM
+   Channel : 15
+   Format : ##
+   IODirection : IOOutput
+   IOU : 1
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value :  0
+  EndObject
+
+  Object : CXSched1
+   Type : InfinityNumeric
+   LastChange : 01/29/03 02:01:00 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : CXSched1
+   CreateTime : 01/22/03 04:45:50 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 04:47:40 PM
+   Format : ###
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value :   0
+  EndObject
+
+  Object : CXSched2
+   Type : InfinityNumeric
+   LastChange : 01/29/03 02:00:49 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : CXSched2
+   CreateTime : 01/29/03 02:00:49 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/11/03 01:09:03 PM
+   Format : ###
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value :   0
+  EndObject
+
+  Object : CXSched3
+   Type : InfinityNumeric
+   LastChange : 01/29/03 02:01:23 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : CXSched3
+   CreateTime : 01/29/03 02:01:23 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 02:01:23 PM
+   Format : ###
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value :   0
+  EndObject
+
+  Object : CXSched4
+   Type : InfinityNumeric
+   LastChange : 01/29/03 02:01:38 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : CXSched4
+   CreateTime : 01/29/03 02:01:38 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 02:01:38 PM
+   Format : ###
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value :   0
+  EndObject
+
+  Object : CXSched5
+   Type : InfinityNumeric
+   LastChange : 01/29/03 02:02:12 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : CXSched5
+   CreateTime : 01/29/03 02:02:12 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 02:02:12 PM
+   Format : ###
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value :   0
+  EndObject
+
+  Object : CXSched6
+   Type : InfinityNumeric
+   LastChange : 01/29/03 02:02:49 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : CXSched6
+   CreateTime : 01/29/03 02:02:49 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 02:02:49 PM
+   Format : ###
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value :   0
+  EndObject
+
+  Object : CXSched7
+   Type : InfinityNumeric
+   LastChange : 01/29/03 02:03:58 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : CXSched7
+   CreateTime : 01/29/03 02:03:58 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 03:38:38 PM
+   Format : ###
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value :   0
+  EndObject
+
+  Object : CXSched8
+   Type : InfinityNumeric
+   LastChange : 01/29/03 02:03:35 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : CXSched8
+   CreateTime : 01/29/03 02:03:35 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 03:55:52 PM
+   Format : ###
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value :   0
+  EndObject
+
+  Object : DisplayMode
+   Type : InfinityNumeric
+   LastChange : 01/29/03 04:10:14 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : DisplayMode
+   CreateTime : 01/22/03 01:31:16 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 12:35:15 PM
+   Channel : 5
+   Format : #
+   IODirection : IOOutput
+   IOU : 1
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Dummy
+   Type : InfinityNumeric
+   LastChange : 05/30/03 10:34:51 AM
+   DeviceId : LabLD1\Infinity1
+   Alias : Dummy
+   CreateTime : 05/29/03 02:59:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 05/30/03 10:34:51 AM
+   Format : ###
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value :   0
+  EndObject
+
+  Object : Heating1
+   Type : InfinityNumeric
+   LastChange : 05/30/03 10:34:45 AM
+   DeviceId : LabLD1\Infinity1
+   Alias : Heating1
+   CreateTime : 05/29/03 03:10:53 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 11:12:29 AM
+   Format : ###
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value :   0
+  EndObject
+
+  Object : KeyMute
+   Type : InfinityNumeric
+   LastChange : 01/22/03 01:31:24 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : KeyMute
+   CreateTime : 01/22/03 01:31:17 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:24 PM
+   Channel : 11
+   Format : #
+   IODirection : IOOutput
+   IOU : 1
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : KeyStroke
+   Type : InfinityNumeric
+   LastChange : 01/22/03 01:31:24 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : KeyStroke
+   CreateTime : 01/22/03 01:31:17 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:24 PM
+   Channel : 1
+   Format : ###
+   IODirection : IOInput
+   IOU : 1
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value :   0
+  EndObject
+
+  Object : LD1_SchedSel
+   Type : InfinityNumeric
+   LastChange : 01/27/03 01:58:07 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1_SchedSel
+   CreateTime : 01/27/03 01:58:07 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/27/03 01:58:07 PM
+   Format : #
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : MaxStart
+   Type : InfinityNumeric
+   LastChange : 06/12/03 04:13:06 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : MaxStart
+   CreateTime : 05/29/03 02:56:34 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 04:13:06 PM
+   Format : ###
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 100
+  EndObject
+
+  Object : MaxStop
+   Type : InfinityNumeric
+   LastChange : 06/12/03 04:13:12 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : MaxStop
+   CreateTime : 05/29/03 02:57:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 04:13:12 PM
+   Format : ###
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 100
+  EndObject
+
+  Object : OAT
+   Type : InfinityNumeric
+   LastChange : 06/12/03 04:13:20 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : OAT
+   CreateTime : 05/29/03 03:04:36 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 04:13:20 PM
+   Format : ##.#
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 10.0
+  EndObject
+
+  Object : SLA
+   Type : InfinityNumeric
+   LastChange : 06/12/03 12:15:37 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SLA
+   CreateTime : 05/29/03 02:59:30 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 12:15:40 PM
+   Format : ##.#
+   Size : 80
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : NotSet
+  EndObject
+
+  Object : SpaceTemp
+   Type : InfinityNumeric
+   LastChange : 06/12/03 04:13:27 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SpaceTemp
+   CreateTime : 05/29/03 02:55:47 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 04:13:27 PM
+   Format : ##.#
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 14.0
+  EndObject
+
+  Object : StartSP
+   Type : InfinityNumeric
+   LastChange : 06/12/03 04:13:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : StartSP
+   CreateTime : 05/29/03 02:54:17 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 04:13:34 PM
+   Format : ##.#
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 21.0
+  EndObject
+
+  Object : StopSP
+   Type : InfinityNumeric
+   LastChange : 06/12/03 04:13:39 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : StopSP
+   CreateTime : 05/29/03 02:55:08 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 04:13:39 PM
+   Format : ##.#
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 20.0
+  EndObject
+
+  Object : TimeFormat
+   Type : InfinityNumeric
+   LastChange : 01/22/03 01:31:24 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : TimeFormat
+   CreateTime : 01/22/03 01:31:17 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 11:12:03 AM
+   Channel : 7
+   Format : #
+   IODirection : IOOutput
+   IOU : 1
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : WarmUp
+   Type : InfinityNumeric
+   LastChange : 06/12/03 04:13:48 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : WarmUp
+   CreateTime : 05/29/03 03:01:22 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 04:13:48 PM
+   Format : ###
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 180
+  EndObject
+
+  Object : Beeper
+   Type : InfinityOutput
+   LastChange : 01/22/03 01:31:24 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Beeper
+   CreateTime : 01/22/03 01:31:17 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:24 PM
+   Channel : 8
+   ElecType : Digital
+   Format : $###
+   IOU : 1
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : Off
+  EndObject
+
+  Object : DispBacklight
+   Type : InfinityOutput
+   LastChange : 01/22/03 01:31:24 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : DispBacklight
+   CreateTime : 01/22/03 01:31:17 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:24 PM
+   Channel : 9
+   ElecType : Digital
+   Format : $###
+   IOU : 1
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : Off
+  EndObject
+
+  Object : GreenLED
+   Type : InfinityOutput
+   LastChange : 01/22/03 01:31:24 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : GreenLED
+   CreateTime : 01/22/03 01:31:17 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:24 PM
+   Channel : 13
+   ElecType : Digital
+   Format : $###
+   IOU : 1
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : Off
+  EndObject
+
+  Object : KeyBacklight
+   Type : InfinityOutput
+   LastChange : 01/22/03 01:31:24 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : KeyBacklight
+   CreateTime : 01/22/03 01:31:17 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:24 PM
+   Channel : 10
+   ElecType : Digital
+   Format : $###
+   IOU : 1
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : Off
+  EndObject
+
+  Object : RedLED
+   Type : InfinityOutput
+   LastChange : 01/22/03 01:31:24 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : RedLED
+   CreateTime : 01/22/03 01:31:17 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:24 PM
+   Channel : 12
+   ElecType : Digital
+   Format : $###
+   IOU : 1
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : Off
+  EndObject
+
+  Object : AnswerString
+   Type : InfinityString
+   LastChange : 01/27/03 11:44:11 AM
+   DeviceId : LabLD1\Infinity1
+   Alias : AnswerString
+   CreateTime : 01/22/03 01:31:17 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 03:52:43 PM
+   Channel : 2
+   IODirection : IOInput
+   IOU : 1
+   Port : 
+   StringSize : 32
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 1.6
+  EndObject
+
+  Object : DisplayLine1
+   Type : InfinityString
+   LastChange : 01/22/03 01:31:25 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : DisplayLine1
+   CreateTime : 01/22/03 01:31:18 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 02/10/03 02:34:23 PM
+   Channel : 1
+   IODirection : IOOutput
+   IOU : 1
+   Port : 
+   StringSize : 16
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : DisplayLine2
+   Type : InfinityString
+   LastChange : 01/22/03 01:31:25 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : DisplayLine2
+   CreateTime : 01/22/03 01:31:18 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/27/03 03:46:03 PM
+   Channel : 2
+   IODirection : IOOutput
+   IOU : 1
+   Port : 
+   StringSize : 16
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : DisplayLine3
+   Type : InfinityString
+   LastChange : 01/22/03 01:31:25 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : DisplayLine3
+   CreateTime : 01/22/03 01:31:18 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/27/03 03:46:09 PM
+   Channel : 3
+   IODirection : IOOutput
+   IOU : 1
+   Port : 
+   StringSize : 16
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : DisplayLine4
+   Type : InfinityString
+   LastChange : 01/22/03 01:31:25 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : DisplayLine4
+   CreateTime : 01/22/03 01:31:18 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/24/03 04:52:55 PM
+   Channel : 4
+   IODirection : IOOutput
+   IOU : 1
+   Port : 
+   StringSize : 16
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : LD1CtrlName
+   Type : InfinityString
+   LastChange : 01/22/03 01:31:25 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1CtrlName
+   CreateTime : 01/22/03 01:31:18 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 02:43:06 PM
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : LD1InfCtrlName
+   Type : InfinityString
+   LastChange : 01/22/03 01:31:25 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1InfCtrlName
+   CreateTime : 01/22/03 01:31:18 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 05/27/03 02:24:50 PM
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : LD1PointType
+   Type : InfinityString
+   LastChange : 01/22/03 01:31:25 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1PointType
+   CreateTime : 01/22/03 01:31:18 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 05/27/03 02:05:43 PM
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : LD1UserType
+   Type : InfinityString
+   LastChange : 01/22/03 01:31:25 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1UserType
+   CreateTime : 01/22/03 01:31:18 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/24/03 03:09:47 PM
+   Port : 
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : FiringOrder
+   Type : Group
+   LastChange : 06/13/03 01:39:28 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : FiringOrder
+   CreateTime : 01/22/03 01:31:16 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 01:39:28 PM
+   Properties : 1
+   ListOfGroupMembers : 
+   {
+    {
+     objectIdentifier : ..\EX_OPTCALL
+     listOfPropertyReferences : 
+     {
+     }
+    }
+    {
+     objectIdentifier : ..\LD1_RTCSET
+     listOfPropertyReferences : 
+     {
+     }
+    }
+    {
+     objectIdentifier : ..\LD1_SCHEDULER
+     listOfPropertyReferences : 
+     {
+     }
+    }
+    {
+     objectIdentifier : ..\LD1_DISPOREDITPT
+     listOfPropertyReferences : 
+     {
+     }
+    }
+    {
+     objectIdentifier : ..\LD1_MENUSELECT
+     listOfPropertyReferences : 
+     {
+     }
+    }
+    {
+     objectIdentifier : ..\CXSCHEDULECALL
+     listOfPropertyReferences : 
+     {
+     }
+    }
+    {
+     objectIdentifier : ..\LD1_INFCONTROL
+     listOfPropertyReferences : 
+     {
+     }
+    }
+    {
+     objectIdentifier : ..\LD1_SELECTPTTYPE
+     listOfPropertyReferences : 
+     {
+     }
+    }
+    {
+     objectIdentifier : ..\LD1_INIT
+     listOfPropertyReferences : 
+     {
+     }
+    }
+    {
+     objectIdentifier : ..\LD1_PASSWORD
+     listOfPropertyReferences : 
+     {
+     }
+    }
+   }
+   EndOfCDT
+  EndObject
+
+  Object : CXSched
+   Type : InfinityFunction
+   LastChange : 06/12/03 11:23:34 AM
+   DeviceId : LabLD1\Infinity1
+   Alias : CXSched
+   CreateTime : 01/22/03 04:19:54 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 04:40:14 PM
+   ByteCode : 
+'V3.0
+Arg 1 StartTime
+Arg 2 StopTime
+Arg 3 Sched
+Arg 4 SchedNum
+Numeric MaxArraySize, count, NextDay, NoOfShifts
+Datetime DefaultTime.1, StopTimeStore, StartTimeStore
+NextDay = Weekday Mod 7 + 1
+MaxArraySize = minimum(StartTime Size, StopTime Size)
+NoOfShifts = truncate(MaxArraySize / 7)
+
+If ((StartTime[Weekday] - DefaultTime.1) > 86400) or ((StopTime[Weekday] - DefaultTime.1) > 86400) or ((StartTime[NextDay] - DefaultTime.1) > 86400) or ((StopTime[NextDay] - DefaultTime.1) > 86400) then
+  For count = 1 to MaxArraySize  
+    StartTime[count] = DefaultTime.1 + timepiece(Hour, StartTime[count]) * 3600 + timepiece(Minute, StartTime[count]) * 60 + 30
+    StopTime[count] = DefaultTime.1 + timepiece(Hour, StopTime[count]) * 3600 + timepiece(Minute, StopTime[count]) * 60 + 30
+  Next count
+Endif
+
+StopTimeStore = DefaultTime.1
+For count = 1 to NoOfShifts  
+  If Date >= StopTimeStore then
+    StartTimeStore = Date - Hour * 3600 - Minute * 60 - Second + (StartTime[Weekday + (count - 1) * 7] - DefaultTime.1)
+    StopTimeStore = Date - Hour * 3600 - Minute * 60 - Second + (StopTime[Weekday + (count - 1) * 7] - DefaultTime.1)
+  Endif
+  If timepiece(Minute, StopTimeStore) = 59 then StopTimeStore = StopTimeStore + 30
+
+Next count
+
+If Date >= StopTimeStore then
+  StartTimeStore = Date - Hour * 3600 - Minute * 60 - Second + (StartTime[NextDay] - DefaultTime.1) + 86400
+  StopTimeStore = Date - Hour * 3600 - Minute * 60 - Second + (StopTime[NextDay] - DefaultTime.1) + 86400
+Endif
+
+StopTime = StopTimeStore
+StartTime = StartTimeStore
+
+If passed(3) then
+  If Date is between StartTime and StopTime then
+    Sched = On
+    If SchedNum = 1 then SchedOnTime1 = StartTime
+    If SchedNum = 1 then SchedOffTime1 = StopTime
+    If SchedNum = 2 then SchedOnTime2 = StartTime
+    If SchedNum = 2 then SchedOffTime2 = StopTime
+    If SchedNum = 3 then SchedOnTime3 = StartTime
+    If SchedNum = 3 then SchedOffTime3 = StopTime
+    If SchedNum = 4 then SchedOnTime4 = StartTime
+    If SchedNum = 4 then SchedOffTime4 = StopTime
+    If SchedNum = 5 then SchedOnTime5 = StartTime
+    If SchedNum = 5 then SchedOffTime5 = StopTime
+    If SchedNum = 6 then SchedOnTime6 = StartTime
+    If SchedNum = 6 then SchedOffTime6 = StopTime
+    If SchedNum = 7 then SchedOnTime7 = StartTime
+    If SchedNum = 7 then SchedOffTime7 = StopTime
+    If SchedNum = 8 then SchedOnTime8 = StartTime
+    If SchedNum = 8 then SchedOffTime8 = StopTime
+
+  Else
+    Sched = Off
+  Endif
+Endif
+
+   EndByteCode
+   CommandLine : False
+  EndObject
+
+  Object : GetLog
+   Type : InfinityFunction
+   LastChange : 01/29/03 02:25:15 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : GetLog
+   CreateTime : 01/29/03 02:25:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/11/03 03:11:26 PM
+   ByteCode : 
+
+Arg 1 ArrayName
+Arg 2 Index
+Return (ArrayName[Index])
+
+   EndByteCode
+  EndObject
+
+  Object : LD1_DispClear
+   Type : InfinityFunction
+   LastChange : 01/22/03 01:31:26 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1_DispClear
+   CreateTime : 01/22/03 01:31:18 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 02:32:17 PM
+   ByteCode : 
+DisplayLine1 = ""
+DisplayLine2 = ""
+DisplayLine3 = ""
+DisplayLine4 = ""
+   EndByteCode
+  EndObject
+
+  Object : Optimum
+   Type : InfinityFunction
+   LastChange : 05/28/03 10:10:03 AM
+   DeviceId : LabLD1\Infinity1
+   Alias : Optimum
+   CreateTime : 05/28/03 10:10:03 AM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 11:09:28 AM
+   ByteCode : 
+'***  V6.0 - 1/10/99 ***
+'Time = Date
+Arg 1 StartSp
+Arg 2 StopSp
+Arg 3 SpaceTemp
+Arg 4 OAT
+Arg 5 StartTime
+Arg 6 StopTime
+Arg 7 MaxStart
+Arg 8 MaxStop
+Arg 9 LogTime
+Arg 10 CalcTime
+Arg 11 AllowedTime
+Arg 12 SLA
+Arg 13 WarmUp
+Arg 14 Learn
+Numeric Mode, OATPtr, DiffTemp, OATFac, NewRate, i, x, LastMode
+Numeric MaxStop1, MaxStart1, WarmUp1, WarmUpReq
+Datetime LastOn
+If SLA Size <> 80 or StopTime = StartTime then Return (0)
+MaxStop1 = (MaxStop + 1) * 60
+MaxStart1 = (MaxStart) * 60
+WarmUp1 = (WarmUp) * 60
+LastMode and Mode = SLA
+If LogTime[3] <> LogTime[7] then LastOn = LogTime[3]
+If (Date - LastOn) > 86400 then WarmUpReq = On
+If Mode <> 0 and (Date > LogTime[5]) then WarmUpReq = Off
+If SLA[41] = 0 then
+  x = 1.5
+  For i = 1 to 31  
+    SLA[41 - i] = x
+    x = x - 0.04
+  Next i
+  x = 1.5
+  For i = 1 to 31  
+    SLA[49 + i] = x
+    x = x - 0.04
+    SLA[41] = 1
+  Next i
+Endif
+If Mode = 0 then
+  If Date is between StartTime and (StopTime - 60) and SLA[46] = 0 then
+    Mode = 2
+    LogTime = Date
+  Endif
+  DiffTemp = StartSp - SpaceTemp
+  OATPtr = max(minimum(40 - (20 - OAT), 40), 10)
+  If DiffTemp > 0 & ((StopTime - StartTime) > 300) then CalcTime = StartTime - (DiffTemp / max(SLA[OATPtr], 0.04) * 3600) Else CalcTime = StartTime
+  If CalcTime is between (StartTime - MaxStart1 - (WarmUp1 * WarmUpReq)) and StartTime then
+    AllowedTime = CalcTime
+  Else
+    If CalcTime > StartTime then AllowedTime = StartTime Else AllowedTime = StartTime - MaxStart1 - (WarmUp1 * WarmUpReq)
+  Endif
+  If Date is between (StartTime - MaxStart1 - (WarmUp1 * WarmUpReq)) and StartTime then
+    If Date > CalcTime then
+      Mode = 1
+      LogTime and LogTime[1] = Date
+      LogTime[2], LogTime[3] and LogTime[4] = LogTime[7]
+      SLA[2] = OAT
+      SLA[3] = SpaceTemp
+      SLA[4] = DiffTemp
+      SLA[5] = OATPtr
+      SLA[9] = StartSp
+      SLA[7], SLA[42], SLA[43] and SLA[47] = 0
+    Endif
+  Endif
+  If Mode <> 0 then
+    LogTime[5] = StartTime
+    LogTime[6] = StopTime
+  Endif
+Endif
+If Mode = 1 then
+  OATPtr = SLA[5]
+  If Date is not between (StartTime - MaxStart1 - (WarmUp1 * WarmUpReq)) and (StopTime - MaxStop1) then
+    Mode = 0
+    LogTime and LogTime[2] = Date
+  Endif
+  If Date is between (StopTime - MaxStop1) and (StopTime) then
+    Mode = 2
+    LogTime and LogTime[2] = Date
+  Endif
+  If Mode = 1 then
+    If SpaceTemp >= StartSp then
+      If Learn then
+        If (Date - LogTime) = 0 then LogTime = Date - 1
+        NewRate = minimum((SLA[4] / ((Date - LogTime) / 3600)), 2 * SLA[OATPtr])
+        SLA[OATPtr] = max((SLA[OATPtr] * 0.6 + NewRate * 0.4), 0.05)
+        If OATPtr > 10 then
+          For i = OATPtr to 11  
+            If SLA[i - 1] > NewRate then SLA[i - 1] = max((SLA[i - 1] * 0.6 + NewRate * 0.4), 0.05)
+          Next i
+          If OATPtr < 39 then
+            For i = OATPtr to 38  
+              NewRate = (i * ((SLA[40] - SLA[OATPtr]) / (40 - OATPtr))) + SLA[40] - 40 * (SLA[40] - SLA[OATPtr]) / (40 - OATPtr)
+              If SLA[i + 1] > NewRate then SLA[i + 1] = max((SLA[i + 1] * 0.6 + NewRate * 0.4), 0.05)
+            Next i
+          Endif
+        Endif
+      Endif
+      Mode = 2
+      LogTime and LogTime[2] = Date
+      SLA[7] = SpaceTemp
+      SLA[9] = StartSp
+    Endif
+  Endif
+Endif
+If LastMode = 0 & Mode = 2 then
+  LogTime[1] and LogTime[2] = Date
+  LogTime[3] and LogTime[4] = LogTime[7]
+  SLA[2] = OAT
+  SLA[3] and SLA[7] = SpaceTemp
+  SLA[9] = StartSp
+  SLA[42], SLA[43] and SLA[47] = 0
+Endif
+If Mode = 2 then
+  If Date is not between (StartTime - MaxStart1 - (WarmUp1 * WarmUpReq)) and (StopTime - 60) then
+    Mode = 0
+    LogTime = Date
+  Endif
+  DiffTemp = SpaceTemp - StopSp
+  OATPtr = max(minimum(80 - (20 - OAT), 80), 50)
+  If DiffTemp > 0 then CalcTime = StopTime - (DiffTemp / max(SLA[OATPtr], 0.04) * 3600) Else CalcTime = StopTime
+  If CalcTime is between (StopTime - MaxStop1) and StopTime then
+    AllowedTime = CalcTime
+  Else
+    If CalcTime > (StopTime - 60) then AllowedTime = StopTime Else AllowedTime = StopTime - MaxStop * 60
+  Endif
+  If Date is between (StopTime - MaxStop1) and StopTime then
+    If Date > CalcTime then
+      Mode = 3
+      LogTime and LogTime[3] = Date
+      LogTime[4] = LogTime[7]
+      SLA[42] = OAT
+      SLA[43] = SpaceTemp
+      SLA[44] = DiffTemp
+      SLA[45] = OATPtr
+      SLA[49] = StopSp
+      SLA[46] = 1
+    Endif
+  Endif
+Endif
+If Mode = 3 then
+  x = 0
+  OATPtr = SLA[45]
+  If Date is not between (StopTime - MaxStop1) and StopTime then Mode = 0
+  If SpaceTemp <= StopSp then x = 1
+  If Date >= (StopTime - 60) then x = 2
+  If x > 0 then
+    If Learn & MaxStop <> 0 & ((Date - LogTime[3]) < MaxStop * 60) then
+      If (Date - LogTime) = 0 then LogTime = Date - 1
+      SLA[OATPtr] = minimum(max(((SLA[OATPtr] * 0.6 + (SLA[44] / ((Date - LogTime) / 3600)) * 0.4) * (x = 1) + SLA[OATPtr] * 0.9 * (x = 2)), 0.05), 2 * SLA[OATPtr])
+      If OATPtr < 80 then
+        For i = OATPtr to 79  
+          If SLA[i + 1] > SLA[OATPtr] then SLA[i + 1] = max((SLA[i + 1] * 0.6 + SLA[OATPtr] * 0.4), 0.05)
+        Next i
+        If OATPtr > 51 then
+          For i = OATPtr to 52  
+            NewRate = (i * ((SLA[50] - SLA[OATPtr]) / (50 - OATPtr))) + SLA[50] - 50 * (SLA[50] - SLA[OATPtr]) / (50 - OATPtr)
+            If SLA[i - 1] > NewRate then SLA[i - 1] = max((SLA[i - 1] * 0.6 + NewRate * 0.4), 0.05)
+          Next i
+        Endif
+      Endif
+    Endif
+    Mode = 0
+    LogTime and LogTime[4] = Date
+    SLA[47] = SpaceTemp
+    SLA[49] = StopSp
+  Endif
+Endif
+If (LastMode = 3 or LastMode = 2) & Mode = 0 then SLA[48] = 1
+If Date is not between StartTime and (StopTime - 60) then SLA[46] = 0
+LastMode, SLA[1] and SLA = Mode
+   EndByteCode
+  EndObject
+
+  Object : PassLog
+   Type : InfinityFunction
+   LastChange : 01/29/03 12:48:49 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : PassLog
+   CreateTime : 01/29/03 12:23:00 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/11/03 03:11:30 PM
+   ByteCode : 
+
+
+Arg 1 ArrayName
+Arg 2 Index
+Arg 3 SetValue
+ArrayName[Index] = SetValue
+Return
+   EndByteCode
+  EndObject
+
+  Object : LD1_Password
+   Type : InfinityProgram
+   LastChange : 06/13/03 03:04:29 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1_Password
+   CreateTime : 01/22/03 01:31:19 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 03:04:29 PM
+   AutoStart : False
+   ByteCode : 
+'Name:     LD1_Password
+'FlowType:     Looping
+'AutoStart:     True
+'CommandLine:     False
+'References
+
+'EndReferences
+String PasswordUser, PasswordOp, PasswordAdmin
+Numeric PassTimeOut
+
+Line Init
+  PassTimeOut = 59
+  PasswordUser = "1234"
+  PasswordOp = "2345"
+  PasswordAdmin = "2364"
+  RedLED = On
+  GreenLED = Off
+  AnswerString = ""
+  DisplayMode = 5
+  DisplayLine4 = "then Press Enter"
+  Goto GetPassword
+Line GetPassword
+  If AnswerString <> "" then
+    If AnswerString = PasswordUser then
+      LD1UserType = "User"
+      Start LD1_MenuSelect
+      Stop 
+    Endif
+    If AnswerString = PasswordOp then
+      LD1UserType = "Op"
+      Start LD1_MenuSelect
+      Stop 
+    Endif
+    If AnswerString = PasswordAdmin then
+      LD1UserType = "AccAdmin"
+      Start LD1_MenuSelect
+      Stop 
+    Endif
+  Else
+    If TS > PassTimeOut then
+      Start LD1_Init
+      Stop 
+    Endif
+  Endif
+
+   EndByteCode
+   DefaultPort : comm3
+  EndObject
+
+  Object : LD1_Init
+   Type : InfinityProgram
+   LastChange : 06/12/03 04:41:59 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1_Init
+   CreateTime : 01/22/03 01:31:19 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 03:05:13 PM
+   ByteCode : 
+'Name:     LD1_Init
+'AutoStart:     True
+'FlowType:     Looping
+'CommandLine:     True   
+'References
+'DisplayMode
+'TimeFormat
+'RedLed
+'KeyStroke
+'EndReferences
+'09/01/03 PR
+
+Line init
+  TimeFormat = 0 'Standard format
+  KeyMute = 1 'Key beep off
+  LD1DateTime = Date
+  DisplayMode = 0
+  DisplayLine1 = "Andover Controls"
+  DisplayLine2 = "--- CSM  100 ---"
+  DisplayLine3 = "----- LD-1 -----"
+  DisplayLine4 = " Press Any Key"
+  RedLED = On
+  GreenLED = Off
+
+  Stop LD1_Password
+
+  Goto WaitKeyPress
+
+Line WaitKeyPress
+  If KeyStroke = 14 then
+    DisplayMode = 4
+    DisplayLine2 = ""
+    DisplayLine3 = ""
+    DisplayLine4 = ""
+    Goto WaitKeyPress
+  Endif
+
+  If KeyStroke = 13 then
+    DisplayMode = 0
+    Goto init
+  Endif
+
+
+  If KeyStroke > 0 then
+    KeyStroke = 0
+    Start LD1_Password
+    Stop 
+  Endif
+
+
+   EndByteCode
+   DefaultPort : comm3
+   Status : Active
+  EndObject
+
+  Object : LD1_SelectPtType
+   Type : InfinityProgram
+   LastChange : 06/13/03 03:05:07 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1_SelectPtType
+   CreateTime : 01/22/03 01:31:19 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 03:05:07 PM
+   AutoStart : False
+   ByteCode : 
+'Name: LD1_SelectPtType
+'FlowType: Looping
+'AutoStart: False
+'CommandLine: False
+
+'References
+'LD1PointType
+
+'EndReferences
+
+Numeric DisplayTimeOut, LastKeyStroke
+
+Line Init
+
+  DisplayTimeOut = 59
+  LD1PointType = "Input"
+  DisplayMode = 0
+  DisplayLine1 = "Select PointType"
+  DisplayLine2 = "1-Inp    2-Out  "
+  DisplayLine3 = "3-Num    4-Date"
+  DisplayLine4 = "5-Str    6-SetP"
+  Goto WaitKey
+
+Line WaitKey
+  LastKeyStroke = KeyStroke
+  KeyStroke = 0
+  Basedon LastKeyStroke Goto K1, K2, K3, K4, K5, K6, K7, K8, K9, K0, K11, K12, Kup, Kdn, Kcc, Ken, Kf1, Kf2, Kf3
+Line K1
+  LD1PointType = "Input"
+  Goto Ken
+Line K2
+  LD1PointType = "Output"
+  Goto Ken
+Line K3
+  LD1PointType = "Numeric"
+  Goto Ken
+Line K4
+  LD1PointType = "DateTime"
+  Goto Ken
+Line K5
+
+  LD1PointType = "String"
+  Goto Ken
+Line K6
+  LD1PointType = "SetPoints"
+  Goto Ken
+Line K7
+  Goto WaitKey
+Line K8
+  Goto WaitKey
+Line K9
+  Goto WaitKey
+Line K0
+  Goto WaitKey
+Line K11
+  Goto WaitKey
+Line K12
+  Goto WaitKey
+Line Kup
+  Goto WaitKey
+Line Kdn
+  Goto WaitKey
+Line Kcc
+  LD1PointType = ""
+  Start LD1_InfControl
+  Stop 
+Line Ken
+  Start LD1_DispOrEditPt
+  Stop 
+Line Kf1
+  Goto WaitKey
+Line Kf2
+  Goto WaitKey
+Line Kf3
+  Goto WaitKey
+
+
+
+
+   EndByteCode
+   DefaultPort : comm3
+  EndObject
+
+  Object : LD1_InfControl
+   Type : InfinityProgram
+   LastChange : 06/13/03 03:39:22 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1_InfControl
+   CreateTime : 01/22/03 01:31:19 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 03:39:22 PM
+   AutoStart : False
+   ByteCode : 
+'Name:     LD1_InfControl
+'AutoStart:     False
+'FlowType:     Looping
+'CommandLine:     False
+'References
+'LD1CtrlName
+'EndReferences
+'09/01/03 PR
+
+Object NetCtrl, InfCtrl
+Numeric DispTimeOut, LastKeyStroke
+
+Line Init
+  DispTimeOut = 59
+  DisplayMode = 0
+  LD1_DispClear 
+  AnswerString = ""
+
+
+  Goto CtrlOpenList
+
+Line CtrlOpenList
+  If OpenList("Controller", NetCtrl) = Success then
+    Goto GetCtrlrName
+  Else
+    CloseList(NetCtrl)
+    Start LD1_Init
+    Stop 
+  Endif
+
+Line GetCtrlrName
+  If GetObject(NetCtrl) = Success then
+    LD1CtrlName = NetCtrl Name
+    DisplayMode = 0
+    DisplayLine1 = "Ethernet"
+    DisplayLine2 = "Controller Name"
+    DisplayLine4 = "ACCEPT      NEXT"
+    Goto WaitKeyPress
+
+  Else
+    CloseList(NetCtrl)
+    Start LD1_Init
+    Stop 
+  Endif
+
+Line WaitKeyPress
+  If KeyStroke > 0 then Goto TestKeyPress
+  If TS > DispTimeOut then
+    CloseList(NetCtrl)
+    Start LD1_Init
+    Stop 
+  Endif
+
+Line TestKeyPress
+  LastKeyStroke = KeyStroke
+  KeyStroke = 0
+'DisplayLine1 = "Controller Name"
+  If LastKeyStroke = 19 then 'F3 next ctrlr
+    DisplayLine1 = "Controller Name"
+    If GetObject(NetCtrl) = Success then
+      LD1CtrlName = NetCtrl Name
+      DisplayLine2 = NetCtrl Name
+      If LD1InfCtrlName <> "" then
+        LD1InfCtrlName = ""
+        CloseList(InfCtrl)
+      Endif
+      Goto TestKeyPress
+    Else
+      CloseList(NetCtrl)
+
+      If OpenList("Controller", NetCtrl) = Success then
+        If GetObject(NetCtrl) = Success then
+          LD1CtrlName = NetCtrl Name
+          DisplayLine2 = LD1CtrlName
+        Else
+          CloseList(NetCtrl)
+          Start LD1_Init
+          Stop 
+        Endif
+      Else
+        CloseList(NetCtrl)
+        Start LD1_Init
+        Stop 
+      Endif
+    Endif
+    Goto TestKeyPress
+  Endif
+
+  If LastKeyStroke = 14 then 'down arrow
+    DisplayLine1 = "Infinet Device"
+    If LD1InfCtrlName = "" then
+      If OpenList("Infinetctlr", InfCtrl, NetCtrl) = Success then
+        If GetObject(InfCtrl) = Success then
+          LD1InfCtrlName = InfCtrl Name
+        Else
+          LD1InfCtrlName = ""
+          CloseList(InfCtrl)
+        Endif
+      Else
+        LD1InfCtrlName = ""
+        CloseList(InfCtrl)
+      Endif
+    Else
+      If GetObject(InfCtrl) = Success then
+        LD1InfCtrlName = InfCtrl Name
+      Else
+        LD1InfCtrlName = ""
+        CloseList(InfCtrl)
+      Endif
+    Endif
+    DisplayLine2 = LD1InfCtrlName
+    Goto TestKeyPress
+
+  Endif
+
+  If LastKeyStroke = 15 then ' cancel key
+    DisplayLine1 = ""
+    DisplayLine2 = ""
+    CloseList(NetCtrl)
+    If LD1InfCtrlName <> "" then
+      CloseList(InfCtrl)
+    Endif
+    Start LD1_Password
+    Stop 
+    Goto TestKeyPress
+  Endif
+  If LastKeyStroke = 17 then ' F1 key
+    If LD1InfCtrlName = "" then
+      CloseList(NetCtrl)
+    Endif
+
+    Start LD1_SelectPtType
+    Stop 
+    Goto TestKeyPress
+  Endif
+
+  If TS > DispTimeOut then Goto WaitKeyPress
+
+
+
+
+
+
+
+
+
+   EndByteCode
+   DefaultPort : comm3
+  EndObject
+
+  Object : CxScheduleCall
+   Type : InfinityProgram
+   LastChange : 05/30/03 09:35:43 AM
+   DeviceId : LabLD1\Infinity1
+   Alias : CxScheduleCall
+   CreateTime : 01/22/03 04:56:19 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 11:24:13 AM
+   AutoStart : False
+   ByteCode : 
+'Triggered by minute
+CXSched(SchedOnTime1, SchedOffTime1, CXSched1, 1)
+CXSched(SchedOnTime2, SchedOffTime2, CXSched2, 2)
+CXSched(SchedOnTime3, SchedOffTime3, CXSched3, 3)
+CXSched(SchedOnTime4, SchedOffTime4, CXSched4, 4)
+CXSched(SchedOnTime5, SchedOffTime5, CXSched5, 5)
+CXSched(SchedOnTime6, SchedOffTime6, CXSched6, 6)
+CXSched(SchedOnTime7, SchedOffTime7, CXSched7, 7)
+CXSched(SchedOnTime8, SchedOffTime8, CXSched8, 8)
+
+
+   EndByteCode
+   DefaultPort : comm3
+   FlowType : FallThru
+  EndObject
+
+  Object : LD1_MenuSelect
+   Type : InfinityProgram
+   LastChange : 06/13/03 03:04:44 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1_MenuSelect
+   CreateTime : 01/23/03 01:15:27 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 03:04:44 PM
+   AutoStart : False
+   ByteCode : 
+'Name: LD1_MenuSelect
+'FlowType: Looping
+'AutoStart: False
+'CommandLine: False
+'References
+'
+'EndReferences
+
+Numeric DisplayTimeOut, LastKeyStroke
+
+Line Init
+
+  DisplayTimeOut = 59
+  DisplayMode = 0
+  RedLED = Off
+  GreenLED = On
+  DisplayLine1 = "------Menu------"
+  DisplayLine4 = "3. Logout"
+
+  If LD1UserType = "User" then
+    DisplayLine2 = "1. View Points"
+    DisplayLine3 = "2. View Schedule"
+  Endif
+
+  If LD1UserType = "Op" then
+    DisplayLine2 = "1. View Points"
+    DisplayLine3 = "2. Edit Schedule"
+  Endif
+
+  If LD1UserType = "AccAdmin" then
+    DisplayLine2 = "1. Edit Points"
+    DisplayLine3 = "2. Edit Schedules"
+  Endif
+  Goto waitkey
+
+Line waitkey
+  LastKeyStroke = KeyStroke
+  KeyStroke = 0
+  If TS > DisplayTimeOut then
+    Start LD1_Password
+    Stop 
+  Endif
+  Basedon LastKeyStroke Goto K1, K2, K3, K4, K5, K6, K7, K8, K9, K0, K11, K12, Kup, Kdn, Kcc, Ken, Kf1, Kf2, Kf3
+Line K1
+  Start LD1_InfControl
+  Stop 
+Line K2
+  Start LD1_Scheduler
+  Stop 
+Line K3
+  Start LD1_Password
+  Stop 
+Line K4
+  Goto waitkey
+Line K5
+  Goto waitkey
+Line K6
+  Goto waitkey
+Line K7
+  Goto waitkey
+Line K8
+  Goto waitkey
+Line K9
+  Goto waitkey
+Line K0
+  Goto waitkey
+Line K11
+  Goto waitkey
+Line K12
+  Goto waitkey
+Line Kup
+  Goto waitkey
+Line Kdn
+  Goto waitkey
+Line Kcc
+  Start LD1_Password
+  Stop 
+Line Ken
+  Goto waitkey
+Line Kf1
+  Goto waitkey
+Line Kf2
+  Goto waitkey
+Line Kf3
+  Goto waitkey
+
+   EndByteCode
+   DefaultPort : comm3
+  EndObject
+
+  Object : LD1_DispOrEditPt
+   Type : InfinityProgram
+   LastChange : 05/27/03 02:39:15 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1_DispOrEditPt
+   CreateTime : 01/23/03 03:43:35 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 03:05:25 PM
+   AutoStart : False
+   ByteCode : 
+'Name: LD1_DispEditPt
+'FlowType: Looping
+'AutoStart: False
+'CommandLine: False
+
+'References
+
+'EndReferences
+
+
+Object ObjectList
+Numeric DisplayTimeOut, LastKeyStroke, SetPointFilter
+String 90 Str_ObjectPath
+String MenuString
+Datetime Line3Temp
+
+Line Init
+  DisplayTimeOut = 100
+  Str_ObjectPath = LD1CtrlName
+  DisplayMode = 0
+  AnswerString = ""
+  If LD1UserType = "Op" or LD1UserType = "AccAdmin" then
+    MenuString = "     EDIT   NEXT"
+  Else
+    MenuString = "            NEXT"
+  Endif
+
+
+  If LD1InfCtrlName <> "" then
+    Str_ObjectPath = Str_ObjectPath ; " " ; LD1InfCtrlName
+  Endif
+  If LD1PointType = "SetPoints" then
+    LD1PointType = "Numeric"
+    SetPointFilter = On
+  Else
+    SetPointFilter = Off
+  Endif
+  Goto CtrlOpenList
+
+Line CtrlOpenList
+  If OpenList(LD1PointType, ObjectList, getname(Str_ObjectPath)) = Success then
+    Goto GetObjectName
+  Else
+    Goto CloseObjectList
+  Endif
+
+Line GetObjectName
+  If GetObject(ObjectList) = Success then
+    If SetPointFilter = On then
+      If ObjectList Setpoint = False then
+        Goto GetObjectName
+      Endif
+    Endif
+    DisplayLine1 = ObjectList Name
+    DisplayLine2 = "The value is:-"
+    DisplayLine3 = ""
+    Print ObjectList Value to DisplayLine3
+    DisplayLine4 = MenuString
+    Goto waitkeypress
+  Else
+    Goto CloseObjectList
+  Endif
+
+Line waitkeypress
+  If KeyStroke > 0 then Goto TestKeyPress
+  If AnswerString <> "" then Goto UpdateEdit
+  If TS > DisplayTimeOut then
+    Goto CloseObjectList
+    Start LD1_Init
+    Stop 
+  Endif
+
+Line TestKeyPress
+  LastKeyStroke = KeyStroke
+  KeyStroke = 0
+  Goto F3
+Line F3
+  If LastKeyStroke = 19 then 'F3 - next
+    If GetObject(ObjectList) = Success then
+      If SetPointFilter = On then
+        If ObjectList Setpoint = False then
+          Goto F3
+        Endif
+      Endif
+      DisplayLine1 = ObjectList Name
+
+'use USA workaround here
+      If LD1PointType = "DateTime" then
+        Line3Temp = ObjectList Value
+'USA workaround code
+
+        DisplayLine3 = timepiece(Month, Line3Temp) ; "/" ; timepiece(Dayofmonth, Line3Temp) ; "/" ; right(timepiece(Year, Line3Temp), 2) ; " "
+
+        If timepiece(Hour, Line3Temp) >= 12 then
+
+          If timepiece(Hour, Line3Temp) = 12 then
+            DisplayLine3 = DisplayLine3 ; timepiece(Hour, Line3Temp) ; ":" ; timepiece(Minute, Line3Temp) ; "PM"
+          Else
+            DisplayLine3 = DisplayLine3 ; (timepiece(Hour, Line3Temp) - 12) ; ":" ; timepiece(Minute, Line3Temp) ; "PM"
+          Endif
+
+        Else
+
+          If timepiece(Hour, Line3Temp) = 0 then
+            DisplayLine3 = DisplayLine3 ; "12:" ; timepiece(Minute, Line3Temp) ; "AM"
+          Else
+            DisplayLine3 = DisplayLine3 ; timepiece(Hour, Line3Temp) ; ":" ; timepiece(Minute, Line3Temp) ; "AM"
+          Endif
+
+        Endif
+'end USA workaround code
+
+      Else
+
+        Print ObjectList Value to DisplayLine3
+      Endif
+
+      Goto waitkeypress
+    Else
+      CloseList(ObjectList)
+
+      If OpenList(LD1PointType, ObjectList, getname(Str_ObjectPath)) = Success then
+        If GetObject(ObjectList) = Success then
+          If SetPointFilter = On then
+            If ObjectList Setpoint = False then
+              Goto F3
+            Endif
+          Endif
+          DisplayLine1 = ObjectList Name
+          Print ObjectList Value to DisplayLine3
+        Else
+          Goto CloseObjectList
+        Endif
+      Else
+        Goto CloseObjectList
+      Endif
+    Endif
+  Endif
+
+  Goto F2
+
+Line F2
+  If LastKeyStroke = 18 then 'F2
+    AnswerString = ""
+    If LD1UserType = "AccAdmin" then
+      If LD1PointType = "Numeric" then DisplayMode = 1
+      If LD1PointType = "String" then DisplayMode = 2
+      If LD1PointType = "DateTime" then DisplayMode = 3
+'**   If LD1PointType = "SetPoints" then DisplayMode = 1
+    Else
+      DisplayMode = 0
+    Endif
+  Endif
+  Goto Kcc
+
+Line Kcc
+
+  If LastKeyStroke = 15 then ' cancel
+    Goto CloseObjectList
+  Endif
+
+  Goto waitkeypress
+
+Line CloseObjectList
+  DisplayLine1 = ""
+  DisplayLine2 = ""
+  DisplayLine4 = ""
+  CloseList(ObjectList)
+
+  Start LD1_SelectPtType
+  Stop 
+
+  Goto waitkeypress
+
+Line UpdateEdit
+  If LD1PointType = "Numeric" or LD1PointType = "SetPoints" then
+    ObjectList Value = StrToNum(AnswerString)
+  Endif
+  If LD1PointType = "DateTime" then
+    ObjectList Value = StrToDate(AnswerString)
+  Endif
+
+
+  AnswerString = ""
+  DisplayMode = 0
+  Goto waitkeypress
+   EndByteCode
+   DefaultPort : comm3
+  EndObject
+
+  Object : LD1_Scheduler
+   Type : InfinityProgram
+   LastChange : 06/12/03 02:22:45 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1_Scheduler
+   CreateTime : 01/29/03 02:33:24 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 03:04:53 PM
+   AutoStart : False
+   ByteCode : 
+'Name: LD1_SelectSched
+'FlowType: Looping
+'AutoStart: False
+'CommandLine: False
+'References
+
+'EndReferences
+Numeric DisplayTimeOut, LastKeyStroke, SchedPos, GotSchedOn, GotSchedOff
+Numeric DispHour, DispMin, DispDay
+String MenuString, DayList[7]
+Datetime temp
+Datetime Line3temp
+
+Line Init
+  DayList[1] = "Sun"
+  DayList[2] = "Mon"
+  DayList[3] = "Tue"
+  DayList[4] = "Wed"
+  DayList[5] = "Thu"
+  DayList[6] = "Fri"
+  DayList[7] = "Sat"
+  SchedPos = 1
+  GotSchedOn = False
+  GotSchedOff = False
+  DisplayTimeOut = 60
+  DisplayMode = 0
+  RedLED = Off
+  GreenLED = On
+  DisplayLine1 = "Select Schedule"
+  DisplayLine2 = "Enter Schedule"
+  DisplayLine3 = "Number 1 to 8"
+  DisplayLine4 = ""
+  AnswerString = ""
+  If LD1UserType = "Op" or LD1UserType = "AccAdmin" then
+    MenuString = "     EDIT   NEXT"
+  Else
+    MenuString = "            NEXT"
+  Endif
+
+  Goto waitkey
+
+Line waitkey
+  LastKeyStroke = KeyStroke
+  KeyStroke = 0
+  If AnswerString <> "" and DisplayMode = 3 then Goto UpdateSched
+  If TS > DisplayTimeOut then
+    Start LD1_MenuSelect
+    Stop 
+  Endif
+  Basedon LastKeyStroke Goto K1, K2, K3, K4, K5, K6, K7, K8, K9, K0, K11, K12, Kup, Kdn, Kcc, Ken, Kf1, Kf2, Kf3
+Line K1
+  LD1_SchedSel = 1
+  Goto ViewSched
+Line K2
+  LD1_SchedSel = 2
+  Goto ViewSched
+Line K3
+  LD1_SchedSel = 3
+  Goto ViewSched
+Line K4
+  LD1_SchedSel = 4
+  Goto ViewSched
+Line K5
+  LD1_SchedSel = 5
+  Goto ViewSched
+Line K6
+  LD1_SchedSel = 6
+  Goto ViewSched
+Line K7
+  LD1_SchedSel = 7
+  Goto ViewSched
+Line K8
+  LD1_SchedSel = 8
+  Goto ViewSched
+Line K9
+  Goto waitkey
+Line K0
+  Goto waitkey
+Line K11
+  Goto waitkey
+Line K12
+  Goto waitkey
+Line Kup
+  Goto waitkey
+Line Kdn
+  Goto waitkey
+Line Kcc
+  Goto closeobjectlist
+Line Ken
+  Goto waitkey
+Line Kf1
+  Goto waitkey
+Line Kf2
+
+  If LD1UserType = "Op" or LD1UserType = "AccAdmin" then
+    If GotSchedOn = True then
+' Print GetLog(getname("SchedOnTime" ; LD1_SchedSel), SchedPos) to DisplayLine3
+      Line3temp = GetLog(getname("SchedOnTime" ; LD1_SchedSel), SchedPos)
+
+'USA workaround code
+
+      DisplayLine3 = timepiece(Month, Line3temp) ; "/" ; timepiece(Dayofmonth, Line3temp) ; "/" ; right(timepiece(Year, Line3temp), 2) ; " "
+
+      If timepiece(Hour, Line3temp) >= 12 then
+
+        If timepiece(Hour, Line3temp) = 12 then
+          DisplayLine3 = DisplayLine3 ; timepiece(Hour, Line3temp) ; ":" ; timepiece(Minute, Line3temp) ; "PM"
+        Else
+          DisplayLine3 = DisplayLine3 ; (timepiece(Hour, Line3temp) - 12) ; ":" ; timepiece(Minute, Line3temp) ; "PM"
+        Endif
+
+      Else
+
+        If timepiece(Hour, Line3temp) = 0 then
+          DisplayLine3 = DisplayLine3 ; "12:" ; timepiece(Minute, Line3temp) ; "AM"
+        Else
+          DisplayLine3 = DisplayLine3 ; timepiece(Hour, Line3temp) ; ":" ; timepiece(Minute, Line3temp) ; "AM"
+        Endif
+
+      Endif
+'end USA workaround code
+
+
+    Endif
+    If GotSchedOff = True then
+' Print GetLog(getname("SchedOffTime" ; LD1_SchedSel), SchedPos) to DisplayLine3
+      Line3temp = GetLog(getname("SchedOffTime" ; LD1_SchedSel), SchedPos)
+'USA workaround code
+
+      DisplayLine3 = timepiece(Month, Line3temp) ; "/" ; timepiece(Dayofmonth, Line3temp) ; "/" ; right(timepiece(Year, Line3temp), 2) ; " "
+
+      If timepiece(Hour, Line3temp) >= 12 then
+
+        If timepiece(Hour, Line3temp) = 12 then
+          DisplayLine3 = DisplayLine3 ; timepiece(Hour, Line3temp) ; ":" ; timepiece(Minute, Line3temp) ; "PM"
+        Else
+          DisplayLine3 = DisplayLine3 ; (timepiece(Hour, Line3temp) - 12) ; ":" ; timepiece(Minute, Line3temp) ; "PM"
+        Endif
+
+      Else
+
+        If timepiece(Hour, Line3temp) = 0 then
+          DisplayLine3 = DisplayLine3 ; "12:" ; timepiece(Minute, Line3temp) ; "AM"
+        Else
+          DisplayLine3 = DisplayLine3 ; timepiece(Hour, Line3temp) ; ":" ; timepiece(Minute, Line3temp) ; "AM"
+        Endif
+
+      Endif
+'end USA workaround code
+
+    Endif
+
+
+    DisplayMode = 3
+'set cursor position
+    CursorPosition = 10
+
+  Endif
+  Goto waitkey
+
+Line Kf3
+  If SchedPos = 15 then Goto closeobjectlist
+  If SchedPos is between 1 and 14 then
+    If GotSchedOn = True then
+      GotSchedOn = False
+      Goto SchedOFF
+    Endif
+
+
+    If GotSchedOff = True then
+      GotSchedOff = False
+      SchedPos = SchedPos + 1
+      Goto SchedON
+    Endif
+  Endif
+
+  Goto waitkey
+
+Line ViewSched
+  Goto SchedON
+
+
+Line SchedON
+  GotSchedOn = True
+  If SchedPos is between 1 and 7 then
+
+    DisplayLine1 = "Schedule " ; NumToStr(LD1_SchedSel)
+    DisplayLine2 = DayList[SchedPos] ; " ON 1 is"
+    DispHour = timepiece(Hour, GetLog(getname("SchedOnTime" ; LD1_SchedSel), SchedPos))
+    DispMin = timepiece(Minute, GetLog(getname("SchedOnTime" ; LD1_SchedSel), SchedPos))
+    If DispMin < 10 then
+      Print NumToStr(DispHour) ; ":" ; "0" ; NumToStr(DispMin) to DisplayLine3
+    Else
+      Print NumToStr(DispHour) ; ":" ; NumToStr(DispMin) to DisplayLine3
+    Endif
+    DisplayLine4 = MenuString
+  Endif
+
+  If SchedPos is between 8 and 14 then
+
+    DisplayLine1 = "Schedule " ; NumToStr(LD1_SchedSel)
+    DisplayLine2 = DayList[SchedPos - 7] ; " ON 2 is"
+    DispHour = timepiece(Hour, GetLog(getname("SchedOnTime" ; LD1_SchedSel), SchedPos))
+    DispMin = timepiece(Minute, GetLog(getname("SchedOnTime" ; LD1_SchedSel), SchedPos))
+    If DispMin < 10 then
+      Print NumToStr(DispHour) ; ":" ; "0" ; NumToStr(DispMin) to DisplayLine3
+    Else
+      Print NumToStr(DispHour) ; ":" ; NumToStr(DispMin) to DisplayLine3
+    Endif
+
+    DisplayLine4 = MenuString
+  Endif
+
+  Goto waitkey
+
+Line SchedOFF
+  GotSchedOff = True
+  If SchedPos is between 1 and 7 then
+    DisplayLine1 = "Schedule " ; NumToStr(LD1_SchedSel)
+    DisplayLine2 = DayList[SchedPos] ; " OFF 1 is"
+    DispHour = timepiece(Hour, GetLog(getname("SchedOffTime" ; LD1_SchedSel), SchedPos))
+    DispMin = timepiece(Minute, GetLog(getname("SchedOffTime" ; LD1_SchedSel), SchedPos))
+    If DispMin < 10 then
+      Print NumToStr(DispHour) ; ":" ; "0" ; NumToStr(DispMin) to DisplayLine3
+    Else
+      Print NumToStr(DispHour) ; ":" ; NumToStr(DispMin) to DisplayLine3
+    Endif
+
+
+    DisplayLine4 = MenuString
+  Endif
+
+  If SchedPos is between 8 and 14 then
+    DisplayLine1 = "Schedule " ; NumToStr(LD1_SchedSel)
+    DisplayLine2 = DayList[SchedPos - 7] ; " OFF 2 is"
+    DispDay = timepiece(Weekday, GetLog(getname("SchedOffTime" ; LD1_SchedSel), SchedPos))
+    DispHour = timepiece(Hour, GetLog(getname("SchedOffTime" ; LD1_SchedSel), SchedPos))
+    DispMin = timepiece(Minute, GetLog(getname("SchedOffTime" ; LD1_SchedSel), SchedPos))
+
+    If DispMin < 10 then
+      Print NumToStr(DispHour) ; ":" ; "0" ; NumToStr(DispMin) to DisplayLine3
+    Else
+      Print NumToStr(DispHour) ; ":" ; NumToStr(DispMin) to DisplayLine3
+    Endif
+
+    DisplayLine4 = MenuString
+  Endif
+
+  Goto waitkey
+
+
+Line UpdateSched
+  If GotSchedOn = True then
+    temp = StrToDate(AnswerString)
+    PassLog(getname("SchedOnTime" ; LD1_SchedSel), SchedPos, temp)
+  Endif
+  If GotSchedOff = True then
+    temp = StrToDate(AnswerString)
+    PassLog(getname("SchedOffTime" ; LD1_SchedSel), SchedPos, temp)
+  Endif
+
+
+
+  AnswerString = ""
+  CursorPosition = 1
+  DisplayMode = 0
+
+  Goto waitkey
+
+Line closeobjectlist
+  LD1_DispClear 
+  Start LD1_MenuSelect
+  Stop 
+
+
+   EndByteCode
+   DefaultPort : comm3
+  EndObject
+
+  Object : LD1_RTCset
+   Type : InfinityProgram
+   LastChange : 01/29/03 04:15:56 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : LD1_RTCset
+   CreateTime : 01/29/03 04:15:56 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 12:31:24 PM
+   AutoStart : False
+   ByteCode : 
+LD1DateTime = Date
+   EndByteCode
+   DefaultPort : comm3
+   FlowType : FallThru
+  EndObject
+
+  Object : Ex_OptCall
+   Type : InfinityProgram
+   LastChange : 06/12/03 12:23:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ex_OptCall
+   CreateTime : 05/29/03 02:49:32 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 09:01:21 AM
+   AutoStart : False
+   ByteCode : 
+Numeric Learn
+Parked:
+  Learn = 1
+  Goto Calc
+
+Calc:
+  Optimum(StartSP, StopSP, SpaceTemp, OAT, SchedOnTime1, SchedOffTime1, MaxStart, MaxStop, LogTime, CalcTime, AllowedTime, SLA, WarmUp, Learn)
+  If SLA = 1 then Turn On Boost Else Turn Off Boost
+  If SLA = 1 or SLA = 2 then
+    Turn On Heating1
+  Else
+    Turn Off Heating1
+  Endif
+
+   EndByteCode
+   DefaultPort : comm3
+   FlowType : FallThru
+  EndObject
+
+  Object : comm1
+   Type : CommPort
+   LastChange : 05/27/03 10:43:58 AM
+   DeviceId : LabLD1\Infinity1
+   Alias : comm1
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 10:21:02 AM
+   Properties : 1
+   DefaultMode : Infinet
+   Baud : Baud19200
+   TrackCXD : False
+  EndObject
+
+  Object : comm16
+   Type : CommPort
+   LastChange : 01/22/03 01:31:30 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : comm16
+   CreateTime : 01/22/03 01:31:16 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:30 PM
+   Properties : 1
+   DefaultMode : LON
+   Baud : Baud19200
+   DefaultBaud : Baud19200
+  EndObject
+
+  Object : comm2
+   Type : CommPort
+   LastChange : 06/12/03 02:58:37 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : comm2
+   CreateTime : 01/22/03 01:31:16 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/13/03 04:32:50 PM
+   Properties : 1
+   DefaultMode : Infinet
+   Baud : Baud19200
+   TrackCXD : False
+  EndObject
+
+  Object : comm3
+   Type : CommPort
+   LastChange : 01/22/03 01:31:30 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : comm3
+   CreateTime : 01/22/03 01:31:16 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 03:42:09 PM
+   Properties : 1
+   DefaultMode : AutoSet
+  EndObject
+
+  Object : comm4
+   Type : CommPort
+   LastChange : 01/22/03 01:31:30 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : comm4
+   CreateTime : 01/22/03 01:31:16 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:30 PM
+   Properties : 1
+   DefaultMode : NotConfigured
+  EndObject
+
+  Object : AccessLog
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:30 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : AccessLog
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:30 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value :       0
+  EndObject
+
+  Object : AccessServer
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:31 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : AccessServer
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:31 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 1
+  EndObject
+
+  Object : Alarms
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:31 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Alarms
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:31 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : AvailRecords
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:31 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : AvailRecords
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:31 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : CpuPower
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:31 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : CpuPower
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:31 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Date
+   Type : InfinitySystemVariable
+   LastChange : 01/29/03 01:09:14 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Date
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 01:09:14 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/29/03 01:09:02 PM
+  EndObject
+
+  Object : Dayofmonth
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:32 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Dayofmonth
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 04:16:30 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Dayofyear
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:32 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Dayofyear
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/29/03 04:16:20 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Errors
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:32 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Errors
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:32 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : EventLogSize
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:33 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : EventLogSize
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:33 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 1000
+  EndObject
+
+  Object : Freemem
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:33 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Freemem
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:41:52 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Hour
+   Type : InfinitySystemVariable
+   LastChange : 06/12/03 04:43:02 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Hour
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 04:43:02 PM
+   Properties : 1
+   Triggers : 
+   {
+    LD1_RTCSET
+   }
+   EndOfCDT
+   Value : 16
+  EndObject
+
+  Object : Hourofday
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:33 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Hourofday
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:33 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Infinet1Count
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:33 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Infinet1Count
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:33 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Infinet2Count
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Infinet2Count
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt1
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt1
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt10
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt10
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt11
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt11
+   CreateTime : 01/22/03 01:31:13 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt12
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt12
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt13
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt13
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt14
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt14
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt15
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt15
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt16
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt16
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt2
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt2
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt3
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt3
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt4
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt4
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt5
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt5
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt6
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt6
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt7
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt7
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt8
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt8
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Ioucommflt9
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:34 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Ioucommflt9
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:34 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : IOUPower
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:35 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : IOUPower
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:35 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Minute
+   Type : InfinitySystemVariable
+   LastChange : 05/29/03 03:14:11 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Minute
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 11:49:50 AM
+   Properties : 1
+   Triggers : 
+   {
+    CXSCHEDULECALL
+    EX_OPTCALL
+   }
+   EndOfCDT
+  EndObject
+
+  Object : ModemPower
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:35 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : ModemPower
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:35 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Month
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:35 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Month
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:35 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 
+  EndObject
+
+  Object : NewAlarmCount
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:35 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : NewAlarmCount
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:35 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : PowerFail
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:35 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : PowerFail
+   CreateTime : 01/22/03 01:31:14 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:35 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : PowerUpTime
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:35 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : PowerUpTime
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:35 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 01/01/89
+  EndObject
+
+  Object : Scan
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:35 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Scan
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:35 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Second
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:35 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Second
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:35 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Status1
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:36 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Status1
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:36 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Status2
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:36 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Status2
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:36 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Status3
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:36 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Status3
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:36 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Status4
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:37 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Status4
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:37 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Status5
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:37 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Status5
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:37 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Status6
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:37 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Status6
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:37 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Status7
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:37 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Status7
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:37 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Status8
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:38 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Status8
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:38 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : SystemStatus
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:38 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : SystemStatus
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:38 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+  Object : Timeofday
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:38 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Timeofday
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 06/12/03 09:30:40 AM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 12:00:00 AM
+  EndObject
+
+  Object : UniquePin
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:38 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : UniquePin
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:38 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : False
+  EndObject
+
+  Object : Version
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:39 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Version
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:39 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 0.000000
+  EndObject
+
+  Object : Weekday
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:39 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Weekday
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 05/29/03 03:39:53 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+   Value : 
+  EndObject
+
+  Object : Year
+   Type : InfinitySystemVariable
+   LastChange : 01/22/03 01:31:39 PM
+   DeviceId : LabLD1\Infinity1
+   Alias : Year
+   CreateTime : 01/22/03 01:31:15 PM
+   CreatedBy : Root\Acc
+   TimeLocked : 01/22/03 01:31:39 PM
+   Properties : 1
+   Triggers : 
+   {
+   }
+   EndOfCDT
+  EndObject
+
+ EndController
+EndSite

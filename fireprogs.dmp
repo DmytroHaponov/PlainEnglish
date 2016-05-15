@@ -1,0 +1,1011 @@
+' Date : 11/29/12 15:15:24 PM
+' User : Root\work
+' Version : 1.93.0.20110324
+
+Continuum
+Network
+
+Path : firstFloor\k1366
+
+Dictionary : 
+
+'TYPE                   : DEVICE                       : NAME                   : TEMPLATE : ALIAS
+ InfinityProgram        : firstFloor\k1366             : FireAlarm1366          : False    : FireAlarm1366
+ InfinityProgram        : firstFloor\k143232           : FireAlarm1432          : False    : FireAlarm1432
+ InfinityProgram        : firstFloor\k1123             : FireAlarm1123          : False    : FireAlarm1123
+ InfinityProgram        : basement\B1.20               : FireAlarmB120          : False    : FireAlarmB120
+ InfinityProgram        : secondFloor\k2218            : FireAlarm2218          : False    : FireAlarm2218
+ InfinityProgram        : firstFloor\k131920           : FireAlarm1319          : False    : FireAlarm1319
+ InfinityProgram        : basement\B179                : FireAlarmB179          : False    : FireAlarmB179
+ InfinityProgram        : thirdFloor\k3211             : FireAlarm3211          : False    : FireAlarm3211
+ InfinityProgram        : secondFloor\k2447            : FireAlarm2447          : False    : FireAlarm2447
+ InfinityProgram        : secondFloor\k2212            : FireAlarm2212          : False    : FireAlarm2212
+ InfinityProgram        : firstFloor\k145              : FireAlarm145           : False    : FireAlarm145
+ InfinityProgram        : fourthFloor\k4265            : FireAlarm4265          : False    : FireAlarm4265
+ InfinityProgram        : thirdFloor\k345              : FireAlarm345           : False    : FireAlarm345
+ InfinityProgram        : secondFloor\k2338            : FireAlarm2338          : False    : FireAlarm2338
+ InfinityProgram        : secondFloor\k2439            : FireAlarm              : False    : FireAlarm
+ InfinityProgram        : thirdFloor\k3240             : FireAlarm3240          : False    : FireAlarm3240
+ InfinityProgram        : fourthFloor\k4270K03         : FireAlarm4270          : False    : FireAlarm4270
+ InfinityProgram        : thirdFloor\k3418             : FireAlarm3418          : False    : FireAlarm3418
+ InfinityProgram        : thirdFloor\k3324             : FireAlarm3324          : False    : FireAlarm3324
+ InfinityProgram        : thirdFloor\k3313             : FireAlarm3313          : False    : FireAlarm3313
+ InfinityProgram        : secondFloor\k2422            : FireAlarm24221         : False    : FireAlarm24221
+ InfinityProgram        : secondFloor\k2322            : FireAlarm2322          : False    : FireAlarm2322
+ InfinityProgram        : firstFloor\od133             : FireAlarm133           : False    : FireAlarm133
+ InfinityProgram        : firstFloor\od1163EGB         : FireAlarm1163          : False    : FireAlarm1163
+ InfinityProgram        : thirdFloor\k3430             : FireAlarm3430          : False    : FireAlarm3430
+ InfinityProgram        : thirdFloor\k333              : FireAlarm333           : False    : FireAlarm333
+ InfinityProgram        : firstFloor\k119              : FireAlarm119           : False    : FireAlarm119
+EndDictionary
+
+Object : FireAlarm1366
+ Type : InfinityProgram
+ LastChange : 27.11.2012 14:52:46
+ DeviceId : firstFloor\k1366
+ Alias : FireAlarm1366
+ CreateTime : 18.09.2012 13:49:06
+ CreatedBy : Root\work
+ TimeLocked : 29.11.2012 15:14:12
+ InstanceId : 7094/7015
+ ByteCode : 
+1:
+  If pozIn1366 = On then Goto 2 Else Goto 3
+
+2:
+  firstFloor\od133\A133 TimeUnlock = 60
+
+  firstFloor\od1364\A1364 TimeUnlock = 60
+
+  firstFloor\k131921\out1 = On
+  firstFloor\k131920\out2 = On
+  firstFloor\k131921\out3 = On
+  firstFloor\k131921\out4 = On
+  firstFloor\k131921\out5 = On
+
+  b1365out = On
+
+  b1377 TimeUnlock = 60
+
+  pozOut1366 = On
+  Goto 1
+
+3:
+
+  If TS > 60 then Goto 4 Else Goto 1
+
+4:
+
+  firstFloor\k131921\out1 = Off
+  firstFloor\k131920\out2 = Off
+  firstFloor\k131921\out3 = Off
+  firstFloor\k131921\out4 = Off
+  firstFloor\k131921\out5 = Off
+
+  b1365out = Off
+
+  pozOut1366 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm1432
+ Type : InfinityProgram
+ LastChange : 27.11.2012 14:54:19
+ DeviceId : firstFloor\k143232
+ Alias : FireAlarm1432
+ CreateTime : 18.09.2012 13:51:15
+ CreatedBy : Root\work
+ TimeLocked : 29.11.2012 15:14:25
+ InstanceId : 7074/7014
+ ByteCode : 
+1:
+  If pozIn1432 = On then Goto 2 Else Goto 4
+
+2:
+  firstFloor\VIP14.92.41\A1483 TimeUnlock = 60
+  firstFloor\VIP14.92.41\A14102 TimeUnlock = 60
+  firstFloor\slideVIPleft\slidenearVIP TimeUnlock = 60
+  firstFloor\slideVIPright\slideVIPr TimeUnlock = 60
+  firstFloor\VIP14.92.41\b1491 TimeUnlock = 60
+  firstFloor\VIP14.92.41\b14114 TimeUnlock = 60
+  b1466 TimeUnlock = 60
+  b1430 TimeUnlock = 60
+  firstFloor\od142134EGB\A1421 TimeUnlock = 60
+
+  D16left = On
+
+  firstFloor\k143231\b15Dright TimeUnlock = 60
+  firstFloor\k143231\b15DLeft TimeUnlock = 60
+
+  D14RightOut = On
+  firstFloor\k143231\D14LeftOut = On
+  firstFloor\k143231\D13RightOut = On
+  firstFloor\k143231\d13Lout = On
+  firstFloor\k143231\D12RightOut = On
+  firstFloor\k143231\D12LeftOut = On
+
+  firstFloor\k145\b1417 TimeUnlock = 60
+
+  pozOut1432 = On
+  Goto 1
+
+3:
+
+  If TS > 60 then Goto 4 Else Goto 1
+
+4:
+  D16left = Off
+  D14RightOut = Off
+  firstFloor\k143231\D14LeftOut = Off
+  firstFloor\k143231\D13RightOut = Off
+  firstFloor\k143231\d13Lout = Off
+  firstFloor\k143231\D12RightOut = Off
+  firstFloor\k143231\D12LeftOut = Off
+
+  pozOut1432 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm1123
+ Type : InfinityProgram
+ LastChange : 27.11.2012 14:48:16
+ DeviceId : firstFloor\k1123
+ Alias : FireAlarm1123
+ CreateTime : 18.09.2012 13:40:37
+ CreatedBy : Root\work
+ TimeLocked : 29.11.2012 15:13:03
+ InstanceId : 7049/7012
+ ByteCode : 
+1:
+  If pozIn1123 = On then Goto 2 Else Goto 3
+
+
+
+2:
+
+  firstFloor\k122610500\bB21 TimeUnlock = 60
+  firstFloor\k1231\bB2111 TimeUnlock = 60
+
+  b1163 TimeUnlock = 60
+  firstFloor\od1163EGB\A1163 TimeUnlock = 60
+  b115816 TimeUnlock = 60
+  b115817out = On
+
+  firstFloor\od1235EGB\A1235 TimeUnlock = 60
+  firstFloor\od128EGB\b115804 TimeUnlock = 60
+
+  firstFloor\k119\b115803 TimeUnlock = 60
+
+  firstFloor\k1231\bST20 TimeUnlock = 60
+
+  pozOut1123 = On
+  Goto 1
+
+3:
+
+  If TS > 60 then Goto 4 Else Goto 1
+
+4:
+
+  b115817out = Off
+
+  pozOut1123 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarmB120
+ Type : InfinityProgram
+ LastChange : 27.11.2012 14:45:08
+ DeviceId : basement\B1.20
+ Alias : FireAlarmB120
+ CreateTime : 18.09.2012 14:03:09
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 14:45:08
+ InstanceId : 7091/7011
+ ByteCode : 
+1:
+  If pozInB120 = On then Goto 2 Else Goto 3
+
+2:
+  bB191 TimeUnlock = 1800
+  basement\B179\bB192 TimeUnlock = 60
+  basement\odB192\AB192 TimeUnlock = 60
+  basement\odB191\AB191 TimeUnlock = 60
+
+  pozOutB120 = On
+  Goto 1
+
+3:
+  pozOutB120 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm2218
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:02:04
+ DeviceId : secondFloor\k2218
+ Alias : FireAlarm2218
+ CreateTime : 18.09.2012 13:52:51
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 15:16:59
+ InstanceId : 7072/7011
+ ByteCode : 
+1:
+  If pozIn2218 = On then Goto 2 Else Goto 3
+
+2:
+  pozOut2218 = On
+  b2276 TimeUnlock = 60
+  secondFloor\od224604\A224615 TimeUnlock = 60
+  secondFloor\od224707\A224724 TimeUnlock = 60
+  secondFloor\k2212\b224720 TimeUnlock = 60
+  Goto 1
+
+3:
+  pozOut2218 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm1319
+ Type : InfinityProgram
+ LastChange : 27.11.2012 14:51:19
+ DeviceId : firstFloor\k131920
+ Alias : FireAlarm1319
+ CreateTime : 18.09.2012 13:45:51
+ CreatedBy : Root\work
+ TimeLocked : 29.11.2012 15:13:51
+ InstanceId : 7088/7011
+ ByteCode : 
+1:
+  If pozIn1319 = On then Goto 2 Else Goto 3
+
+2:
+  firstFloor\od133\A133 TimeUnlock = 60
+
+  firstFloor\k131921\out1 = On
+  out2 = On
+  firstFloor\k131921\out3 = On
+  firstFloor\k131921\out4 = On
+  firstFloor\k131921\out5 = On
+
+  firstFloor\od1364\A1364 TimeUnlock = 60
+
+  firstFloor\k1366\b1365out = On
+
+  firstFloor\k1366\b1377 TimeUnlock = 60
+
+  pozOut1319 = On
+  Goto 1
+
+3:
+
+  If TS > 60 then Goto 4 Else Goto 1
+
+4:
+
+  firstFloor\k131921\out1 = Off
+  out2 = Off
+  firstFloor\k131921\out3 = Off
+  firstFloor\k131921\out4 = Off
+  firstFloor\k131921\out5 = Off
+
+  firstFloor\k1366\b1365out = Off
+
+  pozOut1319 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarmB179
+ Type : InfinityProgram
+ LastChange : 27.11.2012 14:45:59
+ DeviceId : basement\B179
+ Alias : FireAlarmB179
+ CreateTime : 18.09.2012 14:03:55
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 14:45:59
+ InstanceId : 7099/7010
+ ByteCode : 
+1:
+  If pozInB179 = On then Goto 2 Else Goto 3
+
+2:
+
+  bB192 TimeUnlock = 60
+  basement\odB192\AB192 TimeUnlock = 60
+  basement\odB191\AB191 TimeUnlock = 60
+  basement\B1.20\bB191 TimeUnlock = 60
+
+  pozOutB179 = On
+  Goto 1
+
+3:
+  pozOutB179 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm3211
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:07:15
+ DeviceId : thirdFloor\k3211
+ Alias : FireAlarm3211
+ CreateTime : 01.10.2012 13:12:01
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 15:07:15
+ InstanceId : 7033/7010
+ ByteCode : 
+1:
+  If pozIn3211 = On then Goto 2 Else Goto 3
+
+2:
+  pozOut3211 = On
+  b3260 TimeUnlock = 60
+  thirdFloor\k3240\b3238 TimeUnlock = 60
+  thirdFloor\od321404\A321412 TimeUnlock = 60
+  thirdFloor\od3237\A323724 TimeUnlock = 60
+  Goto 1
+
+3:
+  pozOut3211 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm2447
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:05:44
+ DeviceId : secondFloor\k2447
+ Alias : FireAlarm2447
+ CreateTime : 18.09.2012 13:59:36
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 15:05:44
+ InstanceId : 7070/7010
+ ByteCode : 
+1:
+  If pozIn2447 = On then Goto 2 Else Goto 3
+
+2:
+  pozOut2447 = On
+  b2442 TimeUnlock = 60
+  secondFloor\k2439\b242859 TimeUnlock = 60
+  secondFloor\k2422\b2424 TimeUnlock = 60
+  secondFloor\k2422\b247 TimeUnlock = 60
+  Goto 1
+
+3:
+  pozOut2447 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm2212
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:01:15
+ DeviceId : secondFloor\k2212
+ Alias : FireAlarm2212
+ CreateTime : 18.09.2012 13:57:46
+ CreatedBy : Root\work
+ TimeLocked : 29.11.2012 15:14:55
+ InstanceId : 7053/7010
+ ByteCode : 
+1:
+  If pozIn2212 = On then Goto 2 Else Goto 3
+
+2:
+  pozOut2212 = On
+  secondFloor\k2218\b2276 TimeUnlock = 60
+  b224720 TimeUnlock = 60
+  secondFloor\od224604\A224615 TimeUnlock = 60
+  secondFloor\od224707\A224724 TimeUnlock = 60
+  Goto 1
+
+3:
+  pozOut2212 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm145
+ Type : InfinityProgram
+ LastChange : 27.11.2012 14:56:38
+ DeviceId : firstFloor\k145
+ Alias : FireAlarm145
+ CreateTime : 18.09.2012 16:24:32
+ CreatedBy : Root\work
+ TimeLocked : 29.11.2012 15:14:36
+ InstanceId : 7075/7010
+ ByteCode : 
+1:
+  If pozIn145 = On then Goto 2 Else Goto 3
+
+2:
+  firstFloor\VIP14.92.41\A1483 TimeUnlock = 60
+  firstFloor\VIP14.92.41\A14102 TimeUnlock = 60
+  firstFloor\slideVIPleft\slidenearVIP TimeUnlock = 60
+  firstFloor\slideVIPright\slideVIPr TimeUnlock = 60
+  firstFloor\VIP14.92.41\b1491 TimeUnlock = 60
+  firstFloor\VIP14.92.41\b14114 TimeUnlock = 60
+  firstFloor\k143232\b1466 TimeUnlock = 60
+  firstFloor\k143232\b1430 TimeUnlock = 60
+  firstFloor\od142134EGB\A1421 TimeUnlock = 60
+
+  firstFloor\k143232\D16left = On
+
+  firstFloor\k143231\b15Dright TimeUnlock = 60
+  firstFloor\k143231\b15DLeft TimeUnlock = 60
+
+  firstFloor\k143232\D14RightOut = On
+  firstFloor\k143231\D14LeftOut = On
+  firstFloor\k143231\D13RightOut = On
+  firstFloor\k143231\d13Lout = On
+  firstFloor\k143231\D12RightOut = On
+  firstFloor\k143231\D12LeftOut = On
+
+  b1417 TimeUnlock = 60
+
+  pozOut145 = On
+  Goto 1
+
+3:
+
+  If TS > 60 then Goto 4 Else Goto 1
+
+4:
+  firstFloor\k143232\D16left = Off
+  firstFloor\k143232\D14RightOut = Off
+  firstFloor\k143231\D14LeftOut = Off
+  firstFloor\k143231\D13RightOut = Off
+  firstFloor\k143231\d13Lout = Off
+  firstFloor\k143231\D12RightOut = Off
+  firstFloor\k143231\D12LeftOut = Off
+
+  pozOut145 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm4265
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:49:35
+ DeviceId : fourthFloor\k4265
+ Alias : FireAlarm4265
+ CreateTime : 18.09.2012 14:00:47
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 15:49:35
+ InstanceId : 7040/7009
+ ByteCode : 
+1:
+  If pozIn4265 = On then Goto 2 Else Goto 3
+
+2:
+  b4257 TimeUnlock = 60
+  b421706 TimeUnlock = 60
+'b426718 PermanentUnlock = True
+
+  fourthFloor\od427305\A4273BAR TimeUnlock = 60
+  fourthFloor\od427304\A4273 TimeUnlock = 60
+  fourthFloor\od427305\A426720 TimeUnlock = 60
+  fourthFloor\od427304\A426719 TimeUnlock = 60
+
+  pozOut4265 = On
+  Goto 1
+
+3:
+  pozOut4265 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm345
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:11:55
+ DeviceId : thirdFloor\k345
+ Alias : FireAlarm345
+ CreateTime : 20.09.2012 10:03:03
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 15:11:55
+ InstanceId : 7037/7009
+ ByteCode : 
+1:
+  If pozIn345 = On then Goto 2 Else Goto 3
+
+2:
+  pozOut345 = On
+  thirdFloor\k3430\b3260ST44 TimeUnlock = 60
+  thirdFloor\k3418\bST43 TimeUnlock = 60
+  thirdFloor\k3418\bST42 TimeUnlock = 60
+  bST41 TimeUnlock = 60
+  Goto 1
+
+3:
+  pozOut345 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm2338
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:03:29
+ DeviceId : secondFloor\k2338
+ Alias : FireAlarm2338
+ CreateTime : 18.09.2012 15:09:47
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 15:03:29
+ InstanceId : 7063/7009
+ ByteCode : 
+1:
+  If pozIn2338 = On then Goto 2 Else Goto 3
+
+2:
+  pozOut2338 = On
+  secondFloor\k2344\b2339 TimeUnlock = 60
+  secondFloor\k2344\b2346 TimeUnlock = 60
+  b232 TimeUnlock = 60
+  secondFloor\k2322\b2224 TimeUnlock = 60
+  secondFloor\k2322\b2312 TimeUnlock = 60
+  Goto 1
+
+3:
+  pozOut2338 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:05:00
+ DeviceId : secondFloor\k2439
+ Alias : FireAlarm
+ CreateTime : 18.09.2012 16:25:40
+ CreatedBy : Root\work
+ TimeLocked : 29.11.2012 15:12:32
+ InstanceId : 7069/7009
+ ByteCode : 
+1:
+  If pozIn2439 = On then Goto 2 Else Goto 3
+
+2:
+  pozOut2439 = On
+  secondFloor\k2447\b2442 TimeUnlock = 60
+  b242859 TimeUnlock = 60
+  secondFloor\k2422\b2424 TimeUnlock = 60
+  secondFloor\k2422\b247 TimeUnlock = 60
+  Goto 1
+
+3:
+  pozOut2439 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm3240
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:07:56
+ DeviceId : thirdFloor\k3240
+ Alias : FireAlarm3240
+ CreateTime : 19.09.2012 17:45:57
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 15:07:56
+ InstanceId : 7030/7008
+ ByteCode : 
+1:
+  If pozIn3240 = On then Goto 2 Else Goto 3
+
+2:
+  pozOut3240 = On
+  thirdFloor\k3211\b3260 TimeUnlock = 60
+  b3238 TimeUnlock = 60
+  thirdFloor\od321404\A321412 TimeUnlock = 60
+  thirdFloor\od3237\A323724 TimeUnlock = 60
+  Goto 1
+
+3:
+  pozOut3240 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm4270
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:17:31
+ DeviceId : fourthFloor\k4270K03
+ Alias : FireAlarm4270
+ CreateTime : 18.09.2012 14:02:00
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 15:17:31
+ InstanceId : 7041/7007
+ ByteCode : 
+1:
+  If pozIn4270 = On then Goto 2 Else Goto 3
+
+2:
+  b427 TimeUnlock = 60
+  fourthFloor\od427305\A4273BAR TimeUnlock = 60
+  fourthFloor\od427304\A4273 TimeUnlock = 60
+  fourthFloor\od427305\A426720 TimeUnlock = 60
+  fourthFloor\od427304\A426719 TimeUnlock = 60
+
+  fourthFloor\k4265\b4257 TimeUnlock = 60
+  fourthFloor\k4265\b421706 TimeUnlock = 60
+'b426718 PermanentUnlock = True
+
+
+  pozOut4270 = On
+  Goto 1
+
+3:
+
+  pozOut4270 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm3418
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:10:34
+ DeviceId : thirdFloor\k3418
+ Alias : FireAlarm3418
+ CreateTime : 20.09.2012 10:09:28
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 15:10:34
+ InstanceId : 7038/7007
+ ByteCode : 
+1:
+  If pozIn3418 = On then Goto 2 Else Goto 3
+
+2:
+  pozOut3418 = On
+  thirdFloor\k3430\b3260ST44 TimeUnlock = 60
+  bST43 TimeUnlock = 60
+  bST42 TimeUnlock = 60
+  thirdFloor\k345\bST41 TimeUnlock = 60
+  Goto 1
+
+3:
+  pozOut3418 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm3324
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:09:14
+ DeviceId : thirdFloor\k3324
+ Alias : FireAlarm3324
+ CreateTime : 20.09.2012 10:00:03
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 15:09:14
+ InstanceId : 7034/7007
+ ByteCode : 
+1:
+  If pozIn3324 = On then Goto 2 Else Goto 3
+
+2:
+  pozOut3324 = On
+  thirdFloor\k333\bST30 TimeUnlock = 60
+  thirdFloor\k3313\bST31 TimeUnlock = 60
+  thirdFloor\k3313\bST32 TimeUnlock = 60
+  b3260ST33 TimeUnlock = 60
+  bST34 TimeUnlock = 60
+  Goto 1
+
+3:
+  pozOut3324 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm3313
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:08:37
+ DeviceId : thirdFloor\k3313
+ Alias : FireAlarm3313
+ CreateTime : 20.09.2012 9:55:55
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 15:08:37
+ InstanceId : 7036/7007
+ ByteCode : 
+1:
+  If pozIn3313 = On then Goto 2 Else Goto 3
+
+2:
+  pozOut3313 = On
+  thirdFloor\k333\bST30 TimeUnlock = 60
+  bST31 TimeUnlock = 60
+  bST32 TimeUnlock = 60
+  thirdFloor\k3324\b3260ST33 TimeUnlock = 60
+  thirdFloor\k3324\bST34 TimeUnlock = 60
+  Goto 1
+
+3:
+  pozOut3313 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm24221
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:04:13
+ DeviceId : secondFloor\k2422
+ Alias : FireAlarm24221
+ CreateTime : 18.09.2012 13:26:00
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 15:04:13
+ InstanceId : 7013/7007
+ ByteCode : 
+1:
+  If pozIn2422 = On then Goto 2 Else Goto 3
+
+2:
+  pozOut2422 = On
+  secondFloor\k2447\b2442 TimeUnlock = 60
+  secondFloor\k2439\b242859 TimeUnlock = 60
+  b2424 TimeUnlock = 60
+  b247 TimeUnlock = 60
+
+  Goto 1
+
+3:
+  pozOut2422 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm2322
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:02:47
+ DeviceId : secondFloor\k2322
+ Alias : FireAlarm2322
+ CreateTime : 18.09.2012 16:28:02
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 15:02:47
+ InstanceId : 7067/7007
+ ByteCode : 
+1:
+  If pozIn2322 = On then Goto 2 Else Goto 3
+
+2:
+
+  pozOut2322 = On
+  secondFloor\k2344\b2339 TimeUnlock = 60
+  secondFloor\k2344\b2346 TimeUnlock = 60
+  secondFloor\k2338\b232 TimeUnlock = 60
+  b2224 TimeUnlock = 60
+  b2312 TimeUnlock = 60
+  Goto 1
+
+3:
+
+  pozOut2322 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm133
+ Type : InfinityProgram
+ LastChange : 27.11.2012 14:59:30
+ DeviceId : firstFloor\od133
+ Alias : FireAlarm133
+ CreateTime : 18.09.2012 13:48:02
+ CreatedBy : Root\work
+ TimeLocked : 29.11.2012 15:14:00
+ InstanceId : 7093/7007
+ ByteCode : 
+1:
+  If pozIn133 = On then Goto 2 Else Goto 3
+
+2:
+  A133 TimeUnlock = 60
+
+  firstFloor\k131921\out1 = On
+  firstFloor\k131920\out2 = On
+  firstFloor\k131921\out3 = On
+  firstFloor\k131921\out4 = On
+  firstFloor\k131921\out5 = On
+
+  firstFloor\od1364\A1364 TimeUnlock = 60
+
+  firstFloor\k1366\b1365out = On
+
+  firstFloor\k1366\b1377 TimeUnlock = 60
+
+  pozOut133 = On
+  Goto 1
+
+3:
+
+  If TS > 60 then Goto 4 Else Goto 1
+
+4:
+
+  firstFloor\k131921\out1 = Off
+  firstFloor\k131920\out2 = Off
+  firstFloor\k131921\out3 = Off
+  firstFloor\k131921\out4 = Off
+  firstFloor\k131921\out5 = Off
+
+  firstFloor\k1366\b1365out = Off
+
+  pozOut133 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm1163
+ Type : InfinityProgram
+ LastChange : 27.11.2012 14:58:09
+ DeviceId : firstFloor\od1163EGB
+ Alias : FireAlarm1163
+ CreateTime : 18.09.2012 14:48:24
+ CreatedBy : Root\work
+ TimeLocked : 29.11.2012 15:13:20
+ InstanceId : 7081/7007
+ ByteCode : 
+1:
+  If pozIn1163 = On then Goto 2 Else Goto 3
+
+2:
+  firstFloor\k122610500\bB21 TimeUnlock = 60
+  firstFloor\k1231\bB2111 TimeUnlock = 60
+
+  firstFloor\k1123\b1163 TimeUnlock = 60
+  A1163 TimeUnlock = 60
+  firstFloor\k1123\b115816 TimeUnlock = 60
+  firstFloor\k1123\b115817out = On
+
+  firstFloor\od1235EGB\A1235 TimeUnlock = 60
+  firstFloor\od128EGB\b115804 TimeUnlock = 60
+
+  firstFloor\k119\b115803 TimeUnlock = 60
+
+  firstFloor\k1231\bST20 TimeUnlock = 60
+
+  pozOut1163 = On
+  Goto 1
+
+3:
+
+  If TS > 60 then Goto 4 Else Goto 1
+
+4:
+
+  firstFloor\k1123\b115817out = Off
+
+  pozOut1163 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm3430
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:11:14
+ DeviceId : thirdFloor\k3430
+ Alias : FireAlarm3430
+ CreateTime : 20.09.2012 10:12:49
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 15:11:14
+ InstanceId : 7039/7006
+ ByteCode : 
+1:
+  If pozIn3430 = On then Goto 2 Else Goto 3
+
+2:
+  pozOut3430 = On
+  b3260ST44 TimeUnlock = 60
+  thirdFloor\k3418\bST43 TimeUnlock = 60
+  thirdFloor\k3418\bST42 TimeUnlock = 60
+  thirdFloor\k345\bST41 TimeUnlock = 60
+  Goto 1
+
+3:
+  pozOut3430 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm333
+ Type : InfinityProgram
+ LastChange : 27.11.2012 15:09:52
+ DeviceId : thirdFloor\k333
+ Alias : FireAlarm333
+ CreateTime : 20.09.2012 9:50:27
+ CreatedBy : Root\work
+ TimeLocked : 27.11.2012 15:09:52
+ InstanceId : 7035/7006
+ ByteCode : 
+1:
+  If pozIn333 = On then Goto 2 Else Goto 3
+
+2:
+  pozOut333 = On
+  bST30 TimeUnlock = 60
+  thirdFloor\k3313\bST31 TimeUnlock = 60
+  thirdFloor\k3313\bST32 TimeUnlock = 60
+  thirdFloor\k3324\b3260ST33 TimeUnlock = 60
+  thirdFloor\k3324\bST34 TimeUnlock = 60
+  Goto 1
+
+3:
+  pozOut333 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+
+Object : FireAlarm119
+ Type : InfinityProgram
+ LastChange : 27.11.2012 14:49:57
+ DeviceId : firstFloor\k119
+ Alias : FireAlarm119
+ CreateTime : 18.09.2012 13:43:43
+ CreatedBy : Root\work
+ TimeLocked : 29.11.2012 15:13:39
+ InstanceId : 7084/7006
+ ByteCode : 
+1:
+  If pozIn119 = On then Goto 2 Else Goto 3
+
+2:
+  firstFloor\k122610500\bB21 TimeUnlock = 60
+  firstFloor\k1231\bB2111 TimeUnlock = 60
+
+  firstFloor\k1123\b1163 TimeUnlock = 60
+  firstFloor\od1163EGB\A1163 TimeUnlock = 60
+  firstFloor\k1123\b115816 TimeUnlock = 60
+  firstFloor\k1123\b115817out = On
+
+  firstFloor\od1235EGB\A1235 TimeUnlock = 60
+  firstFloor\od128EGB\b115804 TimeUnlock = 60
+
+  b115803 TimeUnlock = 60
+
+  firstFloor\k1231\bST20 TimeUnlock = 60
+
+  pozOut119 = On
+  Goto 1
+
+3:
+
+  If TS > 60 then Goto 4 Else Goto 1
+
+4:
+
+  firstFloor\k1123\b115817out = Off
+
+  pozOut119 = Off
+  Goto 1
+ EndByteCode
+ Status : Active
+EndObject
+

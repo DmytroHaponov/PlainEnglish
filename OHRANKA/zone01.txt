@@ -1,0 +1,17 @@
+Line st
+  If num1 = 1 then Goto redi
+
+Line redi
+  If in4 = Off then Goto df Else Goto boom
+  Goto st
+
+Line df
+  Ala1 = 1
+  ohr_act = On
+  Goto st
+
+Line boom
+'Ala1 = 0
+  ohr_act = Off
+  Goto st
+

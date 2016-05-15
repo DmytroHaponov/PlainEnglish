@@ -1,0 +1,13 @@
+'b13147PriletPerv - infInput, out2 - infOutput
+1:
+
+  If b13147PriletPerv = Off then Goto 2
+
+2:
+
+  out2 = On
+  If TS > 5 then Goto 3 ' 3 seconds can be changed to any reasonable value for the door
+
+3:
+  out2 = Off
+  Goto 1

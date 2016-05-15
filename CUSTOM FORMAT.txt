@@ -1,0 +1,23 @@
+Program Name: SetArray
+FlowType: FallThru
+AutoStart: True
+Code:
+Set AccessFormat[1] to 35 ‘overall number of bits
+Set AccessFormat[2] to 0 ‘control mask
+Set AccessFormat[3] to 0 ‘ manufacturer’s code
+Set AccessFormat[4] to 0 ‘ start bit of man. Code (first bit is 0, not 1)
+Set AccessFormat[5] to 0 ‘ end bit of man. code
+Set AccessFormat[6] to 2 ‘ start bit of site code
+Set AccessFormat[7] to 13 ‘ end bit of site code
+Set AccessFormat[8] to 14 ‘ start bit of card number
+Set AccessFormat[9] to 33 ‘ end bit of card number
+Set AccessFormat[10] to 0 ‘ odd parity mask, first 16 bits
+Set AccessFormat[11] to 0 ‘ odd parity, next 16
+Set AccessFormat[12] to 0 ‘ odd parity, next 16
+Set AccessFormat[13] to 0 ‘ odd parity, next 16
+Set AccessFormat[14] to 0 ‘ even parity, first 16
+Set AccessFormat[15] to 0 ‘ even parity, next 16
+Set AccessFormat[16] to 0 ‘ even parity, next 16
+Set AccessFormat[17] to 0 ‘ even parity, next 16
+Set AccessFormat[18] to 0 ‘ card number multiplier
+Set AccessFormat[19] to 0 ‘ card number divisor

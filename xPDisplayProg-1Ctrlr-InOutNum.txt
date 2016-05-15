@@ -1,0 +1,207 @@
+'The following program is for an xP Display module. It is for
+'displaying and editing the value and state of inputs, outputs, and
+'numerics of only the controller it is loaded in. It is more of an
+'administrator mode type program. With some additions, it could
+'potentially be used to modify points in any controller on your system
+'(but that's what Cyberstation is for).
+
+ Object : ToggleVal
+  Type : InfinityFunction
+  ByteCode : 
+'Function toggles Enabled/Disabled and On/Off
+
+Arg 1 MyState
+
+String MyVal
+
+If MyState = "Enabled" then MyVal = "Disabled"
+If MyState = "Disabled" then MyVal = "Enabled"
+If MyState = "On" then MyVal = "Off"
+If MyState = "Off" then MyVal = "On"
+
+Return MyVal
+  EndByteCode
+ EndObject
+
+
+ Object : xPDisplayACC
+  Type : InfinityProgram
+  Alias : xPDisplayACC
+  AutoStart : False
+  ByteCode : 
+'Revision     'Date     'Author     'Description
+'1.0          04/16/04  D.Summers   Original Program
+
+'This program controls the xP Display.
+'Program is started by separate xP Display program with the following routine:
+'ACCMode:
+'  If TS > 0 then
+'    If xPDisplayACC Status = Inactive then Goto SetupMode
+'  Else
+'    Start xPDisplayACC
+'  Endif
+
+Object MyVar
+Numeric OK
+String MyClass, TestChar
+
+GetPass:  'Routine to ask user for password
+  If TS > 0 then  'Scan has run the Else commands already
+    ACCLCDDispMode = 5  'Password entry mode
+    ACCLCDDispLine1 = "Enter Password:"
+    ACCLCDDispLine2 = "To Access Points"
+'    ACCLCDDispLine3 = "" 'Password mode, do not "seed" line 3.
+    ACCLCDDispLine4 = "Back  Next  Exit"  'Function menu options
+    If (ACCLCDAnswerStr <> "") and (ACCLCDAnswerStr = xPPassword) then Goto SelectClass1 'xPPassword is InfinityString
+    ACCLCDAnswerStr = ""
+    If ACCLCDKeyStroke = 19 then Goto StopACC
+    If TS > 120 then Goto StopACC  'User interaction timeout
+  Else  'Run these commands before the above commands
+    ACCLCDKeyStroke = 0  'Clear keystroke - prevents menu cycling
+    ACCLCDAnswerStr = ""  'Clear answerstring - removes old entries
+  Endif
+
+SelectClass1:  'User has option to edit 1st class option
+  If TS > 0 then  'Scan has run the Else commands already
+    MyClass = "Input"  'Object class option.  Must match objects acceptable for use with OPENLIST command.
+    ACCLCDDispMode = 0  'Display mode
+    ACCLCDDispLine1 = "Select Object"
+    ACCLCDDispLine2 = "Class Type:"
+    ACCLCDDispLine3 = MyClass
+    ACCLCDDispLine4 = "OK    Next  Exit"  'Function menu options
+    If ACCLCDKeyStroke = 17 then Goto StartList
+    If ACCLCDKeyStroke = 18 then Goto SelectClass2
+    If ACCLCDKeyStroke = 19 then Goto StopACC
+  Else  'Run these commands before the above commands
+    ACCLCDKeyStroke = 0  'Clear keystroke - prevents menu cycling
+    ACCLCDAnswerStr = ""  'Clear answerstring - removes old entries
+  Endif
+
+SelectClass2:  'User has option to edit 2nd class option
+  If TS > 0 then  'Scan has run the Else commands already
+    MyClass = "Output"  'Object class option.  Must match objects acceptable for use with OPENLIST command.
+    ACCLCDDispMode = 0  'Display mode
+    ACCLCDDispLine1 = "Select Object"
+    ACCLCDDispLine2 = "Class Type:"
+    ACCLCDDispLine3 = MyClass
+    ACCLCDDispLine4 = "OK    Next  Exit"  'Function menu options
+    If ACCLCDKeyStroke = 17 then Goto StartList
+    If ACCLCDKeyStroke = 18 then Goto SelectClass3
+    If ACCLCDKeyStroke = 19 then Goto StopACC
+  Else  'Run these commands before the above commands
+    ACCLCDKeyStroke = 0  'Clear keystroke - prevents menu cycling
+    ACCLCDAnswerStr = ""  'Clear answerstring - removes old entries
+  Endif
+
+SelectClass3:  'User has option to edit 2nd class option
+  If TS > 0 then  'Scan has run the Else commands already
+    MyClass = "Numeric"  'Object class option.  Must match objects acceptable for use with OPENLIST command.
+    ACCLCDDispMode = 0  'Display mode
+    ACCLCDDispLine1 = "Select Object"
+    ACCLCDDispLine2 = "Class Type:"
+    ACCLCDDispLine3 = MyClass
+    ACCLCDDispLine4 = "OK    Next  Exit"  'Function menu options
+    If ACCLCDKeyStroke = 17 then Goto StartList
+    If ACCLCDKeyStroke = 18 then Goto SelectClass1
+    If ACCLCDKeyStroke = 19 then Goto StopACC
+  Else  'Run these commands before the above commands
+    ACCLCDKeyStroke = 0  'Clear keystroke - prevents menu cycling
+    ACCLCDAnswerStr = ""  'Clear answerstring - removes old entries
+  Endif
+
+StartList:  'Open a list of objects user has selected from menus
+  OK = OpenList(MyClass, MyVar)
+  If OK = Success then 
+    Goto GetNextObj
+  Else
+    CloseList(MyVar)
+  Endif
+
+DisplayVal:  'Display the value of object MyVar for editing
+  If TS > 0 then  'Scan has run the Else commands already
+    If ACCLCDAnswerStr <> "" and ACCLCDDispMode = 2 then  'User has entered a value and should be on/off
+      If (ACCLCDAnswerStr <> "On") and (ACCLCDAnswerStr <> "Off") then  'User has entered invalid string
+        ACCLCDDispMode = 0  'Reset display mode
+        ACCLCDDispMode = 2  'Reset display mode
+        ACCLCDDispLine3 = NumToStr(MyVar Value)  'Set value displayed back to On or Off
+      Else  'User entered valid string
+        MyVar Value = StrToNum(ACCLCDAnswerStr)  'Set object MyVar value to displayed value
+      Endif
+    Else
+      If ACCLCDAnswerStr <> "" and ACCLCDDispMode = 1 then MyVar Value = StrToNum(ACCLCDAnswerStr)  'User entered a number
+    Endif
+    ACCLCDAnswerStr = ""  'Keep answerstring clear until user enters a value
+    If ((ACCLCDKeyStroke = 13) or (ACCLCDKeyStroke = 14)) and (ACCLCDDispMode = 2) then  'User toggles the On/Off point
+      ACCLCDKeyStroke = 0  'Clear keystroke - prevents toggle cycling
+      ACCLCDDispLine3 = ToggleVal(ACCLCDDispLine3)  'Function call to display toggled value of object MyVar
+    Endif
+    If ACCLCDKeyStroke = 17 then Goto DisplayState
+    If ACCLCDKeyStroke = 18 then Goto GetNextObj
+    If ACCLCDKeyStroke = 19 then Goto CloseMyVar
+    If TS > 120 then Goto CloseMyVar  'User interaction timeout
+  Else  'Run these commands before the above commands
+    ACCLCDKeyStroke = 0  'Clear keystroke - prevents menu cycling
+    ACCLCDAnswerStr = ""  'Clear answerstring - removes old entries
+    TestChar = NumToStr(MyVar Value)  'Test value if it is a number or a letter to set display mode
+    If mid(TestChar, 0, 1) = "-" then  
+      TestChar = mid(TestChar, 2, 1)  
+    Else
+      TestChar = mid(TestChar, 0, 1)
+    Endif
+    If asc(TestChar) is 48 thru 57 then  'Value is a number
+      ACCLCDDispMode = 1  'Set display to only accept numbers
+    Else  'Value is a letter
+      ACCLCDDispMode = 2  'Set display to only accept toggle command
+    Endif
+    ACCLCDDispLine1 = "Enter change for:"
+    ACCLCDDispLine2 = MyVar Name
+    ACCLCDDispLine3 = NumToStr(MyVar Value)
+    ACCLCDDispLine4 = "State Next  Exit"
+  Endif
+
+DisplayState:  'Display the state of object MyVar for editing
+  If TS > 0 then  'Scan has run the else commands already
+    If (ACCLCDKeyStroke = 13) or (ACCLCDKeyStroke = 14) then  'Up or down arrow pressed
+      ACCLCDKeyStroke = 0  'Clear keystroke - prevents toggle cycling
+      ACCLCDDispLine3 = ToggleVal(ACCLCDDispLine3)  'Function call to display toggled state of object MyVar
+    Endif
+    If ACCLCDKeyStroke = 16 then MyVar State = StrToNum(ACCLCDDispLine3) 'User pressed enter. Set state to displayed state.
+    If ACCLCDKeyStroke = 17 then Goto DisplayVal
+    If ACCLCDKeyStroke = 18 then Goto GetNextObj
+    If ACCLCDKeyStroke = 19 then Goto CloseMyVar
+    If TS > 120 then Goto CloseMyVar  'User interaction timeout
+  Else  'Run these commands before the above commands
+    ACCLCDKeyStroke = 0  'Clear keystroke - prevents menu cycling
+    ACCLCDAnswerStr = ""  'Clear answerstring - removes old entries
+    ACCLCDDispMode = 0  'Prevent user from typing in any entries
+    ACCLCDDispLine1 = "Enter state of:"
+    ACCLCDDispLine2 = MyVar Name
+    Print MyVar State to ACCLCDDispLine3
+    ACCLCDDispLine4 = "Value Next  Exit"
+  Endif
+
+GetNextObj:  'Get the next class object in the list for the user
+  OK = GetObject(MyVar)
+  If OK = Success then
+    Goto DisplayVal
+  Else  'No more objects in this class
+    CloseList(MyVar)
+    Goto StartList  'Cycle back to the first object in this class
+  Endif
+
+CloseMyVar:
+  CloseList(MyVar)
+  Goto SelectClass1
+
+'Unused routine
+'SetupMode:  
+'  If TS < 90 then
+'    ACCLCDDispMode = 8
+'  Else
+'    Goto SelectClass1
+'  Endif
+
+StopACC:  'Stop this program
+  Stop 
+  EndByteCode
+ EndObject

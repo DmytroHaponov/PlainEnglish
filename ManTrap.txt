@@ -1,0 +1,57 @@
+ Startup:
+    Turn On ManTrapEnable
+    Turn Off ManTrapOccupied
+    Turn Off ManTrapStuckAlm, ManTrapD1OpenAlm and ManTrapD2OpenAlm
+    Goto 1
+
+  1:
+    Turn Off ManTrapOccupied
+    If Time - ManTrapDoor1 TimeEntered < 3 then
+      Turn Off ManTrapEnable
+      Goto 5
+    Endif
+    If Time - ManTrapDoor2 TimeEntered < 3 then
+      Turn Off ManTrapEnable
+      Goto 25
+    Endif
+
+  5:
+    Turn On ManTrapOccupied
+    If ManTrapDoor1 DoorSwitch is Closed then
+      If But2 is On then
+        Set ManTrapDoor2 to ManTrapDoor2 DoorStrikeTime
+        Goto 10
+      Endif
+    Endif
+    If TS > 30 then Turn On ManTrapStuckAlm
+  10:
+    If ManTrapDoor2 DoorSwitch is Opened then Goto 12
+    If TS > 30 then Turn On ManTrapStuckAlm
+  12:
+    If TS > 3 and ManTrapDoor2 DoorSwitch is Closed then
+      Turn On ManTrapEnable
+      Goto 1
+    Endif
+
+
+  25:
+    Turn On ManTrapOccupied
+    If ManTrapDoor2 DoorSwitch is Closed then
+      If But1 is On then
+        Set ManTrapDoor1 to ManTrapDoor1 DoorStrikeTime
+        Goto 30
+      Endif
+    Endif
+    If TS > 30 then Turn On ManTrapStuckAlm
+
+  30:
+    If ManTrapDoor1 DoorSwitch is Opened then Goto 32
+    If TS > 30 then Turn On ManTrapStuckAlm
+
+  32:
+    If TS > 3 and ManTrapDoor1 DoorSwitch is Closed then
+      Turn On ManTrapEnable
+      Goto 1
+    Endif
+
+
